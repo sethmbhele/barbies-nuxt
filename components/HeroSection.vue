@@ -28,13 +28,6 @@
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import type { Ref } from 'vue'
 
-declare global {
-  interface Window {
-    $: JQueryStatic;
-    jQuery: JQueryStatic;
-  }
-}
-
 interface VideoSources {
   mp4?: string;
   webm?: string;
@@ -55,46 +48,35 @@ const carousel: Ref<HTMLElement | null> = ref(null)
 const isLoading = ref(true)
 let owlInstance: any = null
 
-// Function to wait for jQuery and Owl Carousel
-const waitForDependencies = async () => {
-  let attempts = 0
-  const maxAttempts = 50
-  
-  while (attempts < maxAttempts) {
-    const $ = window.jQuery
-    if ($ && $.fn && $.fn.owlCarousel) {
-      return true
-    }
-    await new Promise(resolve => setTimeout(resolve, 100))
-    attempts++
-  }
-  return false
-}
-
 onMounted(async () => {
   // Wait for next tick to ensure DOM is ready
   await nextTick()
   
   if (!carousel.value) {
     console.error('Carousel element not found')
-    return
-  }
-
-  // Wait for jQuery and Owl Carousel to be ready
-  const dependenciesLoaded = await waitForDependencies()
-  if (!dependenciesLoaded) {
-    console.error('jQuery or Owl Carousel not loaded')
     isLoading.value = false
     return
   }
 
-  // Ensure jQuery is available
-  const $ = window.jQuery
-  if (!$) {
-    console.error('jQuery not loaded')
-    return
+  // Wait for jQuery and Owl Carousel to be ready
+  let attempts = 0
+  const maxAttempts = 50
+  
+  while (attempts < maxAttempts) {
+    if (window.jQuery?.fn?.owlCarousel) {
+      break
+    }
+    await new Promise(resolve => setTimeout(resolve, 100))
+    attempts++
+    
+    if (attempts === maxAttempts) {
+      console.error('jQuery or Owl Carousel not loaded')
+      isLoading.value = false
+      return
+    }
   }
 
+  const $ = window.jQuery
   const multiple_items = props.slides.length > 1
   if (!multiple_items) {
     $('.booking-form').addClass('full-width')
@@ -162,12 +144,10 @@ onMounted(async () => {
 })
 
 onUnmounted(() => {
-  if (owlInstance && carousel.value) {
+  if (owlInstance && carousel.value && window.jQuery) {
     const $ = window.jQuery
-    if ($) {
-      $(carousel.value).trigger('destroy.owl.carousel')
-      owlInstance = null
-    }
+    $(carousel.value).trigger('destroy.owl.carousel')
+    owlInstance = null
   }
 })
 </script>
