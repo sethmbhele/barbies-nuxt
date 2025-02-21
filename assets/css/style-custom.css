@@ -45,12 +45,18 @@ body {
 }
 
 /* Fix nav menu font weights */
+.nav-menu {
+  font-family: 'Work Sans', sans-serif !important;
+}
+
 .nav-menu a {
-  font-weight: 400;
+  font-weight: 400 !important;
+  font-family: 'Work Sans', sans-serif !important;
 }
 
 .nav-menu .current-menu-item > a {
-  font-weight: 600;
+  font-weight: 600 !important;
+  font-family: 'Work Sans', sans-serif !important;
 }
 
 /* Social icons positioning for tablet */
