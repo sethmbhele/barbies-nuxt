@@ -27,6 +27,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import type { Ref } from 'vue'
+import { useNuxtApp } from '#app'
 
 interface VideoSources {
   mp4?: string;
@@ -48,6 +49,9 @@ const carousel: Ref<HTMLElement | null> = ref(null)
 const isLoading = ref(true)
 let owlInstance: any = null
 
+// Get jQuery from plugin
+const { $jquery } = useNuxtApp()
+
 onMounted(async () => {
   // Wait for next tick to ensure DOM is ready
   await nextTick()
@@ -63,7 +67,7 @@ onMounted(async () => {
   const maxAttempts = 50
   
   while (attempts < maxAttempts) {
-    if (window.jQuery?.fn?.owlCarousel) {
+    if ($jquery?.fn?.owlCarousel) {
       break
     }
     await new Promise(resolve => setTimeout(resolve, 100))
@@ -76,7 +80,7 @@ onMounted(async () => {
     }
   }
 
-  const $ = window.jQuery
+  const $ = $jquery
   const multiple_items = props.slides.length > 1
   if (!multiple_items) {
     $('.booking-form').addClass('full-width')
@@ -144,9 +148,8 @@ onMounted(async () => {
 })
 
 onUnmounted(() => {
-  if (owlInstance && carousel.value && window.jQuery) {
-    const $ = window.jQuery
-    $(carousel.value).trigger('destroy.owl.carousel')
+  if (owlInstance && carousel.value && $jquery) {
+    $jquery(carousel.value).trigger('destroy.owl.carousel')
     owlInstance = null
   }
 })

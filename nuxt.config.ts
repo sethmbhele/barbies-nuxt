@@ -14,7 +14,9 @@ export default defineNuxtConfig({
     '@/assets/css/style-custom.css'
   ],
 
-  plugins: [],
+  plugins: [
+    { src: '@/plugins/jquery.client.ts', mode: 'client' }
+  ],
 
   app: {
     head: {
@@ -28,10 +30,6 @@ export default defineNuxtConfig({
       link: [
         { rel: 'shortcut icon', href: '/favicon.png' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Work+Sans:400,600%7CEczar:600' }
-      ],
-      script: [
-        { src: 'https://code.jquery.com/jquery-3.7.1.min.js', defer: false },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', defer: true }
       ]
     }
   },
