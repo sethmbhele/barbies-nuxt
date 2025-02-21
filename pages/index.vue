@@ -17,8 +17,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useHead } from '#imports'
+import HeroSection from '~/components/HeroSection.vue'
+import BookingForm from '~/components/BookingForm.vue'
 
-const heroSlides = [
+interface HeroSlide {
+  image: string
+  title: string
+  lightColors: boolean
+  video?: {
+    mp4?: string
+    webm?: string
+    poster?: string
+  }
+}
+
+const heroSlides: HeroSlide[] = [
   {
     image: '/images/hero/hero-1.jpg',
     title: "Barbie's Beach House - Your Perfect Getaway",
@@ -46,7 +59,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Experience luxury at its finest at LeLuxe Hotel. Our panoramic views and world-class amenities ensure an unforgettable stay.'
+      content: 'Welcome to Barbies Beach House - Your perfect getaway destination in Pringle Bay.'
     }
   ]
 })
