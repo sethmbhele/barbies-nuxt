@@ -1,10 +1,3 @@
-<template>
-  <NuxtLayout>
-    <NuxtLoadingIndicator />
-    <NuxtPage />
-  </NuxtLayout>
-</template>
-
 <script setup lang="ts">
 import { onMounted } from '#imports'
 
@@ -13,3 +6,13 @@ onMounted(() => {
   document.body.classList.add('has-booking', 'has-additional-menu-content')
 })
 </script>
+
+<template>
+  <NuxtLayout>
+    <NuxtLoadingIndicator />
+    <NuxtPage />
+  </NuxtLayout>
+</template>
+
+<style>
+</style>
