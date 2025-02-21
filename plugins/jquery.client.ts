@@ -10,6 +10,11 @@ export default defineNuxtPlugin({
   name: 'jquery',
   enforce: 'pre',
   async setup (nuxtApp) {
+    // Add body classes from original template
+    if (process.client) {
+      document.body.classList.add('home', 'fullpage', 'has-booking', 'has-additional-menu-content')
+    }
+
     // Load jQuery from local file
     const jqueryScript = document.createElement('script')
     jqueryScript.src = '/assets/js/jquery-3.3.1.min.js'
