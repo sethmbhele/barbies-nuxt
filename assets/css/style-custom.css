@@ -44,6 +44,15 @@ body {
   }
 }
 
+/* Fix nav menu font weights */
+.nav-menu a {
+  font-weight: 400;
+}
+
+.nav-menu .current-menu-item > a {
+  font-weight: 600;
+}
+
 /* Social icons positioning for tablet */
 @media (min-width: 768px) and (max-width: 1199px) {
   #social-profiles {
