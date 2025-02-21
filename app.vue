@@ -2,7 +2,7 @@
   This is a Vue Single File Component.
   The template tag below will be rendered inside the body.
 -->
-<template>
+<template lang="html">
   <div>
     <NuxtLayout>
       <NuxtLoadingIndicator />
