@@ -1,11 +1,11 @@
 <template>
   <section class="hero-media fullpage">
-    <div ref="carousel" class="owl-carousel">
+    <div ref="carousel" class="owl-carousel owl-theme">
       <template v-for="(slide, index) in slides" :key="index">
         <div 
-          class="item" 
+          class="item owl-lazy" 
           :class="{ 'item-video': slide.video, 'light-hero-colors': slide.lightColors }"
-          :style="{ backgroundImage: `url(${slide.image})` }"
+          :data-src="slide.image"
         >
           <template v-if="slide.video">
             <video ref="video" loop muted preload="none">
@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import type { Ref } from 'vue'
 
 declare global {
@@ -54,83 +54,90 @@ const props = defineProps<{
 const carousel: Ref<HTMLElement | null> = ref(null)
 let owlInstance: any = null
 
-onMounted(() => {
-  if (!carousel.value) return
+onMounted(async () => {
+  // Wait for next tick to ensure DOM is ready
+  await nextTick()
+  
+  if (!carousel.value) {
+    console.error('Carousel element not found')
+    return
+  }
 
+  // Ensure jQuery is available
   const $ = window.jQuery
-  if (!$) return
+  if (!$) {
+    console.error('jQuery not loaded')
+    return
+  }
 
-  owlInstance = $(carousel.value).owlCarousel({
-    items: 1,
-    loop: props.slides.length > 1,
-    mouseDrag: props.slides.length > 1,
-    touchDrag: props.slides.length > 1,
-    autoplay: true,
-    autoplayTimeout: 5000,
-    autoplayHoverPause: true,
-    smartSpeed: 1000,
-    nav: true,
-    dots: true,
-    navText: [
-      '<span class="mdi mdi-chevron-left"></span>',
-      '<span class="mdi mdi-chevron-right"></span>'
-    ],
-    onInitialized: (event: any) => {
-      const $stage = $(event.target).find('.owl-stage')
-      const stageHeight = $stage.height()
-      
-      $stage.find('.owl-item').each(function() {
-        const $item = $(this)
-        const $video = $item.find('video')
-        
-        if ($video.length) {
-          $video.css({
-            height: stageHeight,
-            width: 'auto'
-          })
-          
-          const videoWidth = $video.width() || 0
-          const videoHeight = $video.height() || 0
-          const containerWidth = $item.width() || 0
-          const scale = containerWidth / videoWidth
-          
-          if (videoWidth * scale < containerWidth) {
-            $video.css({
-              width: '100%',
-              height: 'auto'
-            })
-          }
-          
-          const videoElement = $video.get(0) as HTMLVideoElement
-          if (videoElement) {
-            videoElement.play()
-          }
-        }
-      })
-    },
-    onTranslate: (event: any) => {
-      const $stage = $(event.target).find('.owl-stage')
-      $stage.find('.owl-item video').each(function() {
-        const videoElement = this as HTMLVideoElement
-        videoElement.pause()
-      })
-    },
-    onTranslated: (event: any) => {
-      const $stage = $(event.target).find('.owl-stage')
-      $stage.find('.owl-item.active video').each(function() {
-        const videoElement = this as HTMLVideoElement
-        videoElement.play()
-      })
+  const multiple_items = props.slides.length > 1
+  if (!multiple_items) {
+    document.querySelector('.booking-form')?.classList.add('full-width')
+  }
+
+  const onTranslate = (event: any) => {
+    $(event.target).find('video').each(function() {
+      this.pause()
+    })
+  }
+
+  const onTranslated = (event: any) => {
+    $(event.target).find('.owl-item.active video').each(function() {
+      this.play()
+    })
+    if ($(event.target).find('.owl-item.active .light-hero-colors').length > 0) {
+      document.body.classList.add('light-hero-colors')
+    } else {
+      document.body.classList.remove('light-hero-colors')
     }
-  })
+  }
+
+  try {
+    // Initialize owl carousel with exact same options as original
+    owlInstance = $(carousel.value).owlCarousel({
+      items: 1,
+      loop: multiple_items,
+      mouseDrag: multiple_items,
+      touchDrag: multiple_items,
+      nav: true,
+      navElement: 'a href="#"',
+      navText: ['<span class="mdi mdi-arrow-left"></span>', '<span class="mdi mdi-arrow-right"></span>'],
+      dots: false,
+      lazyLoad: true,
+      lazyLoadEager: 1,
+      video: true,
+      responsiveRefreshRate: 0,
+      onTranslate: onTranslate,
+      onTranslated: onTranslated,
+      onLoadedLazy: onTranslated,
+      onInitialized: (event: any) => {
+        if (multiple_items) {
+          document.body.classList.add('hero-has-nav')
+        }
+
+        // Add expand functionality exactly as original
+        const $expandButton = $('<div class="owl-expand"><a href="#"><span class="mdi"></span></a></div>')
+        $expandButton.insertAfter($(event.target).find('.owl-nav')).on('click.leluxe', function(e) {
+          e.preventDefault()
+          if (document.body.classList.contains('expanded-hero-start')) {
+            return
+          }
+          // The expand functionality will be handled by CSS transitions
+          document.body.classList.add('expanded-hero')
+        })
+      }
+    })
+  } catch (error) {
+    console.error('Error initializing Owl Carousel:', error)
+  }
 })
 
 onUnmounted(() => {
   if (owlInstance && carousel.value) {
     const $ = window.jQuery
-    if (!$) return
-    
-    $(carousel.value).owlCarousel('destroy')
+    if ($) {
+      $(carousel.value).owlCarousel('destroy')
+    }
   }
 })
 </script>

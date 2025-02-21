@@ -3,7 +3,7 @@
     <PageHero 
       title="Our Gallery" 
       subtitle="Explore our beautiful spaces"
-      image="/images/gallery-hero.jpg"
+      image="/images/shared/hero2.jpg"
     />
 
     <div class="content-section">
@@ -21,32 +21,32 @@
 <script setup lang="ts">
 const galleryItems = [
   {
-    image: '/images/gallery/hotel-1.jpg',
+    image: '/images/about/gallery/sample-gallery1.jpg',
     caption: 'Luxurious Hotel Lobby',
     gallery: 'hotel-gallery'
   },
   {
-    image: '/images/gallery/room-1.jpg',
+    image: '/images/about/gallery/sample-gallery2.jpg',
     caption: 'Deluxe Suite Bedroom',
     gallery: 'hotel-gallery'
   },
   {
-    image: '/images/gallery/dining-1.jpg',
+    image: '/images/accommodations/sample-accomodation.jpg',
     caption: 'Fine Dining Restaurant',
     gallery: 'hotel-gallery'
   },
   {
-    image: '/images/gallery/spa-1.jpg',
+    image: '/images/accommodations/sample-accomodation5.jpg',
     caption: 'Wellness & Spa',
     gallery: 'hotel-gallery'
   },
   {
-    image: '/images/gallery/pool-1.jpg',
+    image: '/images/accommodations/sample-accomodation6.jpg',
     caption: 'Infinity Pool',
     gallery: 'hotel-gallery'
   },
   {
-    image: '/images/gallery/bar-1.jpg',
+    image: '/images/dining/dining.jpg',
     caption: 'Cocktail Bar',
     gallery: 'hotel-gallery'
   }

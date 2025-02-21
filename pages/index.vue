@@ -21,11 +21,18 @@ import { useHead } from '#imports'
 const heroSlides = [
   {
     image: '/images/hero/hero-1.jpg',
-    title: 'Welcome to Luxury'
+    title: "Barbie's Beach House - Your Perfect Getaway",
+    lightColors: false
   },
   {
     image: '/images/hero/hero-2.jpg',
-    title: 'Experience Comfort'
+    title: 'Experience Comfort and Luxury',
+    lightColors: true
+  },
+  {
+    image: '/images/hero/hero-3.jpg',
+    title: 'Stunning Ocean Views',
+    lightColors: false
   }
 ]
 

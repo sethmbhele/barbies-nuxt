@@ -8,13 +8,14 @@ export default defineNuxtConfig({
     '@/assets/css/materialdesignicons.css',
     '@/assets/css/fancybox.css',
     'owl.carousel/dist/assets/owl.carousel.css',
+    'owl.carousel/dist/assets/owl.theme.default.css',
     '@/assets/css/style.css',
     '@/assets/css/style-animations.css',
     '@/assets/css/style-custom.css'
   ],
 
   plugins: [
-    { src: '~/plugins/jquery.client.ts', mode: 'client' }
+    { src: '@/plugins/jquery.client.ts', mode: 'client' }
   ],
 
   app: {

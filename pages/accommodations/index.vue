@@ -1,8 +1,9 @@
 <template>
   <div class="has-additional-menu-content full-content">
     <PageHero 
-      :images="['/tmp/sample-accomodation.jpg']" 
-      :expand-duration="800"
+      title="Our Accommodations"
+      subtitle="Experience luxury and comfort"
+      image="/images/shared/hero2.jpg"
     />
 
     <div class="content-wrap">
@@ -51,7 +52,7 @@ const rooms: Room[] = [
       'Free WiFi'
     ],
     price: '$89/night',
-    image: '/tmp/sample-accomodation.jpg'
+    image: '/images/accommodations/sample-accomodation.jpg'
   },
   {
     title: 'Double Room',
@@ -64,7 +65,7 @@ const rooms: Room[] = [
       'City view'
     ],
     price: '$129/night',
-    image: '/tmp/sample-accomodation.jpg'
+    image: '/images/accommodations/sample-accomodation5.jpg'
   },
   {
     title: 'Deluxe Suite',
@@ -77,7 +78,7 @@ const rooms: Room[] = [
       'Ocean view'
     ],
     price: '$249/night',
-    image: '/tmp/sample-accomodation.jpg'
+    image: '/images/accommodations/sample-accomodation6.jpg'
   }
 ]
 

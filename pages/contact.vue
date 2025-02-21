@@ -3,7 +3,7 @@
     <PageHero 
       title="Contact Us" 
       subtitle="Get in touch with our team"
-      image="/images/contact-hero.jpg"
+      image="/images/shared/hero2.jpg"
     />
 
     <div class="content-section">

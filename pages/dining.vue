@@ -3,7 +3,7 @@
     <PageHero 
       title="Fine Dining" 
       subtitle="Experience culinary excellence"
-      image="/images/dining-hero.jpg"
+      image="/images/dining/dining.jpg"
     />
 
     <div class="content-section">

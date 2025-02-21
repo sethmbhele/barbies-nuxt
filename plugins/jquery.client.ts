@@ -1,9 +1,10 @@
 import jQuery from 'jquery'
 import 'owl.carousel'
-import 'owl.carousel/dist/assets/owl.carousel.css'
 
-export default defineNuxtPlugin(() => {
-  if (typeof window !== 'undefined') {
+export default defineNuxtPlugin((nuxtApp) => {
+  if (process.client) {
     window.$ = window.jQuery = jQuery
+    console.log('jQuery initialized:', !!window.jQuery)
+    console.log('Owl Carousel initialized:', !!(jQuery as any).fn.owlCarousel)
   }
 })
