@@ -55,12 +55,36 @@ const carousel: Ref<HTMLElement | null> = ref(null)
 const isLoading = ref(true)
 let owlInstance: any = null
 
+// Function to wait for jQuery and Owl Carousel
+const waitForDependencies = async () => {
+  let attempts = 0
+  const maxAttempts = 50
+  
+  while (attempts < maxAttempts) {
+    const $ = window.jQuery
+    if ($ && $.fn && $.fn.owlCarousel) {
+      return true
+    }
+    await new Promise(resolve => setTimeout(resolve, 100))
+    attempts++
+  }
+  return false
+}
+
 onMounted(async () => {
   // Wait for next tick to ensure DOM is ready
   await nextTick()
   
   if (!carousel.value) {
     console.error('Carousel element not found')
+    return
+  }
+
+  // Wait for jQuery and Owl Carousel to be ready
+  const dependenciesLoaded = await waitForDependencies()
+  if (!dependenciesLoaded) {
+    console.error('jQuery or Owl Carousel not loaded')
+    isLoading.value = false
     return
   }
 
