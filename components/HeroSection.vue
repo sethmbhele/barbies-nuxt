@@ -55,6 +55,18 @@ const carousel: Ref<HTMLElement | null> = ref(null)
 const isLoading = ref(true)
 let owlInstance: any = null
 
+// Track loaded images
+const loadedImages = ref(new Set())
+
+// Watch for image load events
+const onImageLoad = (imagePath: string) => {
+  loadedImages.value.add(imagePath)
+  // Check if all images are loaded
+  if (loadedImages.value.size === props.slides.length) {
+    isLoading.value = false
+  }
+}
+
 onMounted(async () => {
   // Wait for next tick to ensure DOM is ready
   await nextTick()
@@ -75,6 +87,15 @@ onMounted(async () => {
   if (!multiple_items) {
     $('.booking-form').addClass('full-width')
   }
+
+  // Preload images
+  props.slides.forEach(slide => {
+    if (slide.image) {
+      const img = new Image()
+      img.onload = () => onImageLoad(slide.image!)
+      img.src = slide.image
+    }
+  })
 
   const onTranslate = (event: any) => {
     $(event.target).find('video').each(function() {
@@ -110,11 +131,6 @@ onMounted(async () => {
       responsiveRefreshRate: 0,
       onTranslate,
       onTranslated,
-      onLoadedLazy: (event: any) => {
-        onTranslated(event)
-        // Hide loading spinner when first image is loaded
-        isLoading.value = false
-      },
       onInitialized: (event: any) => {
         if (multiple_items) {
           document.body.classList.add('hero-has-nav')
