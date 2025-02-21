@@ -3,10 +3,10 @@
     <div ref="carousel" class="owl-carousel owl-theme">
       <template v-for="(slide, index) in slides" :key="index">
         <div 
-          class="item" 
+          class="item owl-lazy" 
           :class="{ 'item-video': slide.video, 'light-hero-colors': slide.lightColors }"
+          :data-src="slide.image"
         >
-          <img :data-src="slide.image" class="owl-lazy" :alt="slide.title || ''" />
           <template v-if="slide.video">
             <video ref="video" loop muted preload="none">
               <source v-if="slide.video.mp4" type="video/mp4" :src="slide.video.mp4" />
@@ -55,18 +55,6 @@ const carousel: Ref<HTMLElement | null> = ref(null)
 const isLoading = ref(true)
 let owlInstance: any = null
 
-// Track loaded images
-const loadedImages = ref(new Set())
-
-// Watch for image load events
-const onImageLoad = (imagePath: string) => {
-  loadedImages.value.add(imagePath)
-  // Check if all images are loaded
-  if (loadedImages.value.size === props.slides.length) {
-    isLoading.value = false
-  }
-}
-
 onMounted(async () => {
   // Wait for next tick to ensure DOM is ready
   await nextTick()
@@ -87,15 +75,6 @@ onMounted(async () => {
   if (!multiple_items) {
     $('.booking-form').addClass('full-width')
   }
-
-  // Preload images
-  props.slides.forEach(slide => {
-    if (slide.image) {
-      const img = new Image()
-      img.onload = () => onImageLoad(slide.image!)
-      img.src = slide.image
-    }
-  })
 
   const onTranslate = (event: any) => {
     $(event.target).find('video').each(function() {
@@ -131,6 +110,11 @@ onMounted(async () => {
       responsiveRefreshRate: 0,
       onTranslate,
       onTranslated,
+      onLoadedLazy: (event: any) => {
+        onTranslated(event)
+        // Hide loading spinner after first image is loaded
+        isLoading.value = false
+      },
       onInitialized: (event: any) => {
         if (multiple_items) {
           document.body.classList.add('hero-has-nav')
