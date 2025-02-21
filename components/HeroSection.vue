@@ -19,7 +19,6 @@
         </div>
       </template>
     </div>
-    <span class="overlay"></span>
     <span v-show="isLoading" class="mdi mdi-spin mdi-loading"></span>
   </section>
 </template>
