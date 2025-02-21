@@ -1,5 +1,3 @@
-import 'owl.carousel'
-
 // Extend window with jQuery types
 declare global {
   interface Window {
