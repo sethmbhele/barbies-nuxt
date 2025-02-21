@@ -1,6 +1,12 @@
+<!--
+  This is a Vue Single File Component.
+  The template tag below will be rendered inside the body.
+-->
 <template>
-  <NuxtLayout>
-    <NuxtLoadingIndicator />
-    <NuxtPage />
-  </NuxtLayout>
+  <div>
+    <NuxtLayout>
+      <NuxtLoadingIndicator />
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
