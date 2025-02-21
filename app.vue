@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import { onMounted } from '#imports'
-
-onMounted(() => {
-  // Add necessary body classes
-  document.body.classList.add('has-booking', 'has-additional-menu-content')
-})
-</script>
-
 <template>
   <NuxtLayout>
     <NuxtLoadingIndicator />
@@ -14,5 +5,8 @@ onMounted(() => {
   </NuxtLayout>
 </template>
 
-<style>
-</style>
+<script>
+if (process.client) {
+  document.body.classList.add('has-booking', 'has-additional-menu-content')
+}
+</script>
