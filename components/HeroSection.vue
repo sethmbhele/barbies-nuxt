@@ -20,7 +20,7 @@
       </template>
     </div>
     <span class="overlay"></span>
-    <span class="mdi mdi-spin mdi-loading"></span>
+    <span v-show="isLoading" class="mdi mdi-spin mdi-loading"></span>
   </section>
 </template>
 
@@ -52,6 +52,7 @@ const props = defineProps<{
 }>()
 
 const carousel: Ref<HTMLElement | null> = ref(null)
+const isLoading = ref(true)
 let owlInstance: any = null
 
 onMounted(async () => {
@@ -109,7 +110,11 @@ onMounted(async () => {
       responsiveRefreshRate: 0,
       onTranslate,
       onTranslated,
-      onLoadedLazy: onTranslated,
+      onLoadedLazy: (event: any) => {
+        onTranslated(event)
+        // Hide loading spinner when first image is loaded
+        isLoading.value = false
+      },
       onInitialized: (event: any) => {
         if (multiple_items) {
           document.body.classList.add('hero-has-nav')
@@ -124,13 +129,11 @@ onMounted(async () => {
           }
           document.body.classList.add('expanded-hero')
         })
-
-        // Remove loading spinner after initialization
-        $('.mdi-loading').fadeOut()
       }
     })
   } catch (error) {
     console.error('Error initializing Owl Carousel:', error)
+    isLoading.value = false
   }
 })
 
