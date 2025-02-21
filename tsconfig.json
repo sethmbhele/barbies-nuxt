@@ -1,4 +1,16 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "types": ["@nuxt/types", "@types/node", "@nuxt/image"],
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "allowJs": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    ".nuxt/nuxt.d.ts",
+    "**/*"
+  ]
 }
