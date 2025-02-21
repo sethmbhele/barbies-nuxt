@@ -1,4 +1,3 @@
-import jQuery from 'jquery'
 import 'owl.carousel'
 
 // Extend window with jQuery types
@@ -11,26 +10,29 @@ declare global {
 
 export default defineNuxtPlugin({
   name: 'jquery',
-  enforce: 'pre', // This ensures our plugin runs before others
+  enforce: 'pre',
   async setup (nuxtApp) {
-    // Initialize jQuery
-    window.$ = window.jQuery = jQuery
+    // Load jQuery from local file
+    const jqueryScript = document.createElement('script')
+    jqueryScript.src = '/assets/js/jquery-3.3.1.min.js'
+    document.head.appendChild(jqueryScript)
 
-    // Ensure jQuery is loaded before continuing
+    // Wait for jQuery to load
     await new Promise<void>((resolve) => {
-      if (window.jQuery) {
-        resolve()
-      } else {
-        const checkJquery = setInterval(() => {
-          if (window.jQuery) {
-            clearInterval(checkJquery)
-            resolve()
-          }
-        }, 50)
-      }
+      jqueryScript.onload = () => resolve()
     })
 
-    // Return jQuery instance for use in other plugins/components
+    // Load Owl Carousel from local file
+    const owlScript = document.createElement('script')
+    owlScript.src = '/assets/js/owl-carousel.min.js'
+    document.head.appendChild(owlScript)
+
+    // Wait for Owl Carousel to load
+    await new Promise<void>((resolve) => {
+      owlScript.onload = () => resolve()
+    })
+
+    // Provide jQuery globally
     return {
       provide: {
         jquery: window.jQuery
