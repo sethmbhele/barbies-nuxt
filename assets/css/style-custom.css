@@ -1,0 +1,68 @@
+/* place your custom style here and include the file in your page */
+
+/* Override background colors */
+html {
+  background-color: #f2f2f2 !important;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+/* Ensure site menu toggle is hidden on desktop, overriding has-additional-menu-content */
+@media (min-width: 1200px) {
+  .site-menu-toggle,
+  .has-additional-menu-content .site-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Keep menu toggle visible on mobile and tablet */
+@media (max-width: 1199px) {
+  .site-menu-toggle {
+    display: block;
+  }
+
+  /* Keep grey background on tablet/mobile */
+  #site-menu,
+  .mobile-menu-opened #site-menu {
+    background-color: #f2f2f2 !important;
+  }
+
+  /* Ensure menu items are readable on grey background */
+  .nav-menu li {
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+
+  #site-menu .nav-menu {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Social icons positioning for tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #social-profiles {
+    position: absolute;
+    top: 60px;
+    right: 110px;
+  }
+}
+
+/* Hide social icons on mobile */
+@media (max-width: 767px) {
+  #social-profiles {
+    display: none;
+  }
+}
+
+/* Additional mobile styles */
+@media (max-width: 767px) {
+  /* Ensure all relevant elements maintain grey background */
+  body, 
+  .app-wrapper,
+  #site-menu,
+  .mobile-menu-opened #site-menu,
+  .nav-menu .current-menu-item > a {
+    background-color: #f2f2f2 !important;
+  }
+}
