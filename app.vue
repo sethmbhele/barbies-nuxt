@@ -13,11 +13,3 @@ onMounted(() => {
   document.body.classList.add('has-booking', 'has-additional-menu-content')
 })
 </script>
-
-<style>
-/* Global styles */
-html, body {
-  margin: 0;
-  padding: 0;
-}
-</style>
