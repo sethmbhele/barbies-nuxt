@@ -3,10 +3,10 @@
     <div ref="carousel" class="owl-carousel owl-theme">
       <template v-for="(slide, index) in slides" :key="index">
         <div 
-          class="item owl-lazy" 
+          class="item" 
           :class="{ 'item-video': slide.video, 'light-hero-colors': slide.lightColors }"
-          :data-src="slide.image"
         >
+          <img :data-src="slide.image" class="owl-lazy" :alt="slide.title || ''" />
           <template v-if="slide.video">
             <video ref="video" loop muted preload="none">
               <source v-if="slide.video.mp4" type="video/mp4" :src="slide.video.mp4" />
@@ -72,7 +72,7 @@ onMounted(async () => {
 
   const multiple_items = props.slides.length > 1
   if (!multiple_items) {
-    document.querySelector('.booking-form')?.classList.add('full-width')
+    $('.booking-form').addClass('full-width')
   }
 
   const onTranslate = (event: any) => {
@@ -107,24 +107,26 @@ onMounted(async () => {
       lazyLoadEager: 1,
       video: true,
       responsiveRefreshRate: 0,
-      onTranslate: onTranslate,
-      onTranslated: onTranslated,
+      onTranslate,
+      onTranslated,
       onLoadedLazy: onTranslated,
       onInitialized: (event: any) => {
         if (multiple_items) {
           document.body.classList.add('hero-has-nav')
         }
-
-        // Add expand functionality exactly as original
+        
+        // Add expand button
         const $expandButton = $('<div class="owl-expand"><a href="#"><span class="mdi"></span></a></div>')
         $expandButton.insertAfter($(event.target).find('.owl-nav')).on('click.leluxe', function(e) {
           e.preventDefault()
           if (document.body.classList.contains('expanded-hero-start')) {
             return
           }
-          // The expand functionality will be handled by CSS transitions
           document.body.classList.add('expanded-hero')
         })
+
+        // Remove loading spinner after initialization
+        $('.mdi-loading').fadeOut()
       }
     })
   } catch (error) {
@@ -136,7 +138,8 @@ onUnmounted(() => {
   if (owlInstance && carousel.value) {
     const $ = window.jQuery
     if ($) {
-      $(carousel.value).owlCarousel('destroy')
+      $(carousel.value).trigger('destroy.owl.carousel')
+      owlInstance = null
     }
   }
 })
