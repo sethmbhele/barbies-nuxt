@@ -4,7 +4,7 @@
     <section class="hero-media">
       <div class="owl-carousel" data-expand-duration="800">
         <div class="item">
-          <img src="/images/about/hero.jpg" alt="About Hero Image" class="hero-image">
+          <img src="/images/shared/hero2.jpg" alt="About Hero Image" class="hero-image">
         </div>
       </div>
       <span class="overlay"></span>
@@ -52,9 +52,9 @@
           
           <div class="gallery-container">
             <div class="image-grid">
-              <img src="/images/about/gallery/gallery-1.jpg" alt="Hotel Exterior" class="gallery-image">
-              <img src="/images/about/gallery/gallery-2.jpg" alt="Luxury Suite" class="gallery-image">
-              <img src="/images/about/gallery/gallery-3.jpg" alt="Fine Dining" class="gallery-image">
+              <img src="/images/about/gallery/sample-gallery1.jpg" alt="Hotel Exterior" class="gallery-image">
+              <img src="/images/about/gallery/sample-gallery2.jpg" alt="Luxury Suite" class="gallery-image">
+              <img src="/images/accommodations/sample-accomodation.jpg" alt="Fine Dining" class="gallery-image">
             </div>
           </div>
         </div>
