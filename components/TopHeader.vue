@@ -38,7 +38,7 @@ import MainNav from './MainNav.vue'
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 100px;
   position: relative;
 }
 
@@ -91,7 +91,7 @@ import MainNav from './MainNav.vue'
 
 @media (max-width: 1199px) {
   .header-container {
-    padding: 0 1rem;
+    padding: 0 30px;
   }
   
   .top-header {

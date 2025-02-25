@@ -4,9 +4,9 @@
       <nav class="nav-menu">
         <ul>
           <li class="menu-item"><NuxtLink to="/">Home</NuxtLink></li>
-          <li class="menu-item"><NuxtLink to="/about">About</NuxtLink></li>
-          <li class="menu-item"><NuxtLink to="/accommodations">Living</NuxtLink></li>
-          <li class="menu-item"><NuxtLink to="/dining">Dining</NuxtLink></li>
+          <li class="menu-item"><NuxtLink to="/about">The House</NuxtLink></li>
+          <li class="menu-item"><NuxtLink to="/accommodations">Pringle Bay</NuxtLink></li>
+          <li class="menu-item"><NuxtLink to="/dining">FAQ's</NuxtLink></li>
           <li class="menu-item"><NuxtLink to="/contact">Contact</NuxtLink></li>
         </ul>
       </nav>
