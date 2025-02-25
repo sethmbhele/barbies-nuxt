@@ -52,7 +52,7 @@
             </FaqItem>
 
             <FaqItem question="What happens during load shedding?">
-              <p>We have an Uninterruptible Power Supply (UPS) system to ensure essential services continue during load shedding.</p>
+              <p>We have an Uninterruptible Power Supply (UPS) system that will keep the Wi-Fi running during load shedding.</p>
             </FaqItem>
 
             <FaqItem question="Is there parking available?">
