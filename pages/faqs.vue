@@ -4,7 +4,7 @@
     <section class="hero-media">
       <div class="owl-carousel" data-expand-duration="800">
         <div class="item">
-          <img src="/images/shared/hero2.jpg" alt="FAQs" class="hero-image">
+          <img src="/images/hero/hero-2.jpg" alt="FAQs" class="hero-image">
         </div>
       </div>
       <span class="overlay"></span>
