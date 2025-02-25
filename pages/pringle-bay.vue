@@ -15,35 +15,43 @@
       <div class="entry entry-page">
         <h2 class="entry-title">Discover Pringle Bay</h2>
         <div class="entry-content">
-          <p class="intro-text">Nestled between mountains and sea, Pringle Bay offers a perfect escape from city life while being just over an hour from Cape Town.</p>
+          <p class="intro-text">Nestled between mountains and sea, Barbie's Beach House is not just about comfort; it's about embracing the stunning surroundings. Just beyond your door lie Pringle Bay's pristine beaches, inviting you to bask in the sun or embark on thrilling outdoor adventures.</p>
           
           <div class="features">
             <div class="feature feature-highlight">
               <span class="mdi mdi-beach feature-icon"></span>
-              <h4>Beach Life</h4>
+              <h4>Beach Life & Activities</h4>
               <div class="feature-content">
-                <p>Pringle Bay's pristine beach stretches for kilometers, offering excellent swimming, surfing, and long walks. The beach is perfect for families, with rock pools to explore and safe swimming areas.</p>
+                <p>Start your adventure at the pristine Pringle Bay Beach, where you can bask in the sun, swim in the calm lagoon formed by the Buffel's River, or build sandcastles with your family. For the more adventurous, try your hand at fishing or whale watching, especially during the migration season when these majestic creatures grace the waters nearby.</p>
+                <p>If you're seeking thrills, engage in water sports such as kayaking or surfing, with equipment rentals available in the village. The beach's rock pools teem with marine life, offering endless opportunities to connect with nature.</p>
               </div>
             </div>
 
             <div class="feature">
               <span class="mdi mdi-hiking feature-icon"></span>
-              <h4>Outdoor Activities</h4>
-              <p>The area offers numerous hiking trails, mountain biking routes, and nature walks. The nearby Harold Porter Botanical Gardens showcase the region's unique fynbos vegetation.</p>
-            </div>
-
-            <div class="feature">
-              <span class="mdi mdi-food-fork-drink feature-icon"></span>
-              <h4>Local Dining</h4>
-              <p>Despite its small size, Pringle Bay boasts several excellent restaurants, cafes, and a local deli. Fresh seafood features prominently on many menus.</p>
+              <h4>Nature & Exploration</h4>
+              <p>Whether it's hiking through scenic trails or exploring the nearby Harold Porter Botanical Gardens, every moment spent here is an opportunity to connect with nature. The gardens offer serene walking paths and breathtaking flora, perfect for a leisurely afternoon stroll.</p>
             </div>
 
             <div class="feature feature-highlight">
+              <span class="mdi mdi-food-fork-drink feature-icon"></span>
+              <h4>Culinary Delights</h4>
+              <div class="feature-content">
+                <p>Pringle Bay has blossomed into a culinary destination, delighting both locals and visitors with its diverse and vibrant dining scene. Among the standout establishments:</p>
+                <ul class="dining-options">
+                  <li><strong>The Book Club</strong> - A charming restaurant offering unique fusion flavors crafted from locally sourced South African produce</li>
+                  <li><strong>Cork</strong> - Delights wine enthusiasts with an extensive selection of local wines paired with seasonal dishes</li>
+                  <li><strong>Hangklip Hotel</strong> - Enjoy delicious meals and a lively music program featuring local talent</li>
+                  <li><strong>Hook, Line and Sinker</strong> - Fresh seafood in a casual setting</li>
+                  <li><strong>The Burger Bar</strong> - Artisanal pizzas and gourmet burgers</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="feature">
               <span class="mdi mdi-binoculars feature-icon"></span>
               <h4>Wildlife and Nature</h4>
-              <div class="feature-content">
-                <p>The area is part of the UNESCO-protected Kogelberg Biosphere Reserve. Watch for whales from June to December, and enjoy the antics of the local penguin colony at Stony Point.</p>
-              </div>
+              <p>The area is part of the UNESCO-protected Kogelberg Biosphere Reserve. Watch for whales during migration season and enjoy the antics of the local penguin colony at Stony Point.</p>
             </div>
           </div>
         </div>
@@ -143,6 +151,30 @@ onMounted(() => {
 
 .feature-content {
   margin-top: 1rem;
+}
+
+.dining-options {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.dining-options li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.dining-options li::before {
+  content: "•";
+  color: #A97C50;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.dining-options strong {
+  color: #333;
 }
 
 @media (max-width: 768px) {
