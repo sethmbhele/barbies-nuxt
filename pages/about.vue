@@ -131,7 +131,7 @@ onMounted(() => {
 
 .feature-icon {
   font-size: 2rem;
-  color: #ffd40d;
+  color: #c49a6c;
   margin-bottom: 1rem;
 }
 
@@ -153,7 +153,7 @@ onMounted(() => {
   display: block;
   font-size: 2.5rem;
   font-weight: 600;
-  color: #ffd40d;
+  color: #c49a6c;
   margin-bottom: 0.5rem;
 }
 

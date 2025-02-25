@@ -694,6 +694,21 @@ input[type="submit"].button-color {
 	color: #000;
 }
 
+.button-color:hover,
+button.button-color:hover,
+input[type="button"].button-color:hover,
+input[type="reset"].button-color:hover,
+input[type="submit"].button-color:hover,
+.button-color:focus,
+button.button-color:focus,
+input[type="button"].button-color:focus,
+input[type="reset"].button-color:focus,
+input[type="submit"].button-color:focus {
+	border-color: #A97C50;
+	background-color: #A97C50;
+	color: #000;
+}
+
 .button-white,
 button.button-white,
 input[type="button"].button-white,
@@ -1083,7 +1098,7 @@ button .mdi {
 
 	.gallery-grid-container .column-image a:hover,
 	.gallery-grid-container .column-image a:focus {
-		border-color: #c49a6c;
+		border-color: #A97C50;
 	}
 
 	.gallery-grid-container .column-image a:hover .mdi,
@@ -1244,7 +1259,7 @@ button .mdi {
 .tab-container .tabs {
 	list-style: none;
 	padding: 0;
-	border-bottom: 3px solid #c49a6c;
+	border-bottom: 3px solid #A97C50;
 }
 
 .tab-container .tabs li {
@@ -1269,7 +1284,7 @@ button .mdi {
 }
 
 .tab-container .tabs a.tab-link-active {
-	background-color: #c49a6c;
+	background-color: #A97C50;
 	color: #000;
 }
 
@@ -1366,7 +1381,7 @@ button .mdi {
 
 .dinning-menu-item .image a:hover,
 .dinning-menu-item .image a:focus {
-	border-color: #c49a6c;
+	border-color: #A97C50;
 }
 
 .dinning-menu-item .image img {
@@ -1902,14 +1917,6 @@ button .mdi {
 
 	.hero-has-nav .hero-media .owl-carousel .owl-nav {
 		display: block;
-	}
-
-	.has-booking .hero-media .owl-carousel .owl-nav {
-		padding-right: 3px;
-	}
-
-	.fullpage .hero-media .owl-carousel .owl-nav {
-		left: 0;
 	}
 
 	.has-booking .hero-media .owl-carousel .owl-nav:after {
@@ -2570,7 +2577,7 @@ button .mdi {
 	}
 
 	#identity .languages .current-menu-item a {
-		background-color: #c49a6c;
+		background-color: #A97C50;
 		color: initial;
 	}
 }
@@ -2615,7 +2622,7 @@ button .mdi {
 
 	#identity .languages .current-menu-item a:after {
 		bottom: 6px;
-		background-color: #c49a6c;
+		background-color: #A97C50;
 	}
 }
 
@@ -2992,7 +2999,7 @@ button .mdi {
 	#site-menu .nav-menu > ul > .current-menu-item > a:after,
 	#site-menu .nav-menu > ul > .current-menu-parent > a:after {
 		bottom: 6px;
-		background-color: #c49a6c;
+		background-color: #A97C50;
 	}
 
 	.nav-menu .menu-item-has-children ul {
@@ -3034,7 +3041,7 @@ button .mdi {
 
 	.nav-menu .menu-item-has-children li {
 		display: block;
-		background-color: #c49a6c;
+		background-color: #A97C50;
 	}
 
 	.nav-menu .menu-item-has-children li:first-child {
@@ -4015,7 +4022,7 @@ button .mdi {
 
 .booking-form form .field .dropdown ul .selected a {
 	font-weight: 600;
-	background-color: #c49a6c;
+	background-color: #A97C50;
 }
 
 .booking-form form button {
@@ -4067,7 +4074,7 @@ button .mdi {
 	visibility: visible;
 	opacity: 1;
 	background-color: #fff;
-	border: 3px solid #c49a6c;
+	border: 3px solid #A97C50;
 	margin-top: 4.65rem;
 	-webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .05);
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .05);
@@ -4307,7 +4314,7 @@ button .mdi {
 
 	.entry-media > a:hover,
 	.entry-media > a:focus {
-		border-color: #c49a6c;
+		border-color: #A97C50;
 	}
 
 	.entry-media > a:hover:before,
@@ -4448,9 +4455,9 @@ button .mdi {
 }
 
 .entry-accomodation .accomodation-price .price {
-	background-image: -webkit-gradient(linear, left top, right top, from(#c49a6c), to(#c49a6c));
-	background-image: -o-linear-gradient(left, #c49a6c 0%, #c49a6c 100%);
-	background-image: linear-gradient(to right, #c49a6c 0%, #c49a6c 100%);
+	background-image: -webkit-gradient(linear, left top, right top, from(#A97C50), to(#A97C50));
+	background-image: -o-linear-gradient(left, #A97C50 0%, #A97C50 100%);
+	background-image: linear-gradient(to right, #A97C50 0%, #A97C50 100%);
 	background-position: 0 65%;
 	background-repeat: repeat-x;
 	background-size: 100% 10px;
@@ -4957,10 +4964,6 @@ button .mdi {
 	margin-bottom: 2rem;
 }
 
-.comment-list .comment-respond {
-	padding-left: 6.5em;
-}
-
 .comment-respond .comment-form-author,
 .comment-respond .comment-form-email,
 .comment-respond .comment-form-comment {
@@ -5066,4 +5069,16 @@ button .mdi {
 		left: 100px;
 		right: 100px;
 	}
+}
+
+.stat-number {
+  color: #A97C50;
+}
+
+.feature-icon {
+  color: #A97C50;
+}
+
+.feature-icon:hover {
+  color: #A97C50;
 }
