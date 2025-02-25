@@ -21,7 +21,7 @@ import MainNav from './MainNav.vue'
 <style>
 /* Using non-scoped styles to override any global styles */
 .top-header {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6) !important;
   width: 100%;
   height: 100px;
   position: fixed;
