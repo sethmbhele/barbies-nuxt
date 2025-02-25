@@ -80,6 +80,36 @@
                 <li>Washer, dryer and iron and ironing board</li>
               </ul>
             </div>
+
+            <div class="feature feature-highlight">
+              <span class="mdi mdi-sofa feature-icon"></span>
+              <h4>Gather Around the Open Plan Living Area</h4>
+              <div class="feature-content">
+                <p>The heart of Barbie's Beach House is its dining room, where you can share stories over delicious meals. With a table that comfortably seats 10-14 guests, it's the perfect setting for laughter-filled dinners that stretch late into the evening.</p>
+                <p>As twilight descends, retreat to the cozy lounge, warmed by a Mexican freestanding fireplace that crackles softly as you gather around with loved ones. Glass doors open up to a small patio overlooking the tranquil stream—an idyllic spot for your morning coffee as you soak in the beauty of nature.</p>
+                <p>With strong Wi-Fi throughout and an Uninterruptible Power Supply (UPS) for those unpredictable load-shedding moments, you can stay connected while enjoying your escape from everyday life.</p>
+              </div>
+            </div>
+
+            <div class="feature">
+              <span class="mdi mdi-grill feature-icon"></span>
+              <h4>The Braai Patio</h4>
+              <p>Step outside onto the Braai (BBQ) patio, where the scent of grilled delights mingles with the salty sea breeze, and enjoy al fresco dining under a canopy of stars.</p>
+              <ul class="feature-list">
+                <li>Outdoor dining table that seats 16 people</li>
+                <li>Jet master BBQ</li>
+                <li>Stocked with braai wood for your use</li>
+              </ul>
+            </div>
+
+            <div class="feature feature-highlight">
+              <span class="mdi mdi-nature feature-icon"></span>
+              <h4>The Riverside Patio & Garden</h4>
+              <div class="feature-content">
+                <p>As you step onto the patio, you'll be greeted by stunning views of the surrounding landscape, where the gentle sounds of the river enhance your connection to nature. Comfortable outdoor couches are perfect for relaxing with sundowners a book and the outdoor table is perfect for alfresco lunches.</p>
+                <p>Children can explore the playhouse, sparking their imagination and providing hours of entertainment. As you stroll through the garden, you'll find cozy seating areas perfect for relaxation or gathering with loved ones.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -195,6 +225,14 @@ onMounted(() => {
 
 .feature-list li:last-child {
   border-bottom: none;
+}
+
+.feature-highlight {
+  background: rgba(169, 124, 80, 0.1);
+}
+
+.feature-content {
+  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
