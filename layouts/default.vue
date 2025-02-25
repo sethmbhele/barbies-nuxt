@@ -1,7 +1,7 @@
 <template>
   <div :class="wrapperClasses">
     <TopHeader />
-
+    <SocialIcons />
     <slot />
 
     <BookingForm v-if="showBooking" />
@@ -12,6 +12,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import TopHeader from '~/components/TopHeader.vue'
+import SocialIcons from '~/components/SocialIcons.vue'
 
 const route = useRoute()
 
