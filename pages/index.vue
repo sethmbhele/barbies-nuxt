@@ -34,17 +34,17 @@ interface HeroSlide {
 const heroSlides: HeroSlide[] = [
   {
     image: '/images/hero/hero-1.jpg',
-    title: "Barbie's Beach House - Your Perfect Getaway",
+    title: 'Welcome to Your Coastal Escape at Barbie\'s Beach House',
     lightColors: false
   },
   {
     image: '/images/hero/hero-2.jpg',
-    title: 'Experience Comfort and Luxury',
+    title: 'A Family-Friendly Retreat Awaits You',
     lightColors: true
   },
   {
     image: '/images/hero/hero-3.jpg',
-    title: 'Stunning Ocean Views',
+    title: 'Gather Around the open plan living area for Lasting Memories',
     lightColors: false
   }
 ]

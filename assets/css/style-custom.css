@@ -74,16 +74,24 @@ body {
 /* Underline styles */
 .nav-menu > ul > li > a:after {
   background-color: #A97C50 !important;
-  transition: transform 0.3s ease !important;
+  transition: transform 0.3s ease, bottom 0.3s ease !important;
   transform: scaleX(0) !important;
   transform-origin: center !important;
+  content: '' !important;
+  position: absolute !important;
+  z-index: -1 !important;
+  left: 10px !important;
+  right: 10px !important;
+  bottom: 0 !important;
+  height: 10px !important;
 }
 
-/* Show underline on hover and active */
+/* Show underline on hover and active with consistent positioning */
 .nav-menu > ul > li > a:hover:after,
 .nav-menu > ul > li > a:focus:after,
 .nav-menu > ul > li > a.router-link-active:after {
   transform: scaleX(1) !important;
+  bottom: 6px !important;
 }
 
 /* Social icons positioning for tablet */
