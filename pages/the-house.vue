@@ -4,7 +4,7 @@
     <section class="hero-media">
       <div class="owl-carousel" data-expand-duration="800">
         <div class="item">
-          <img src="/images/shared/hero2.jpg" alt="About Hero Image" class="hero-image">
+          <img src="/images/shared/hero2.jpg" alt="Beach House Exterior" class="hero-image">
         </div>
       </div>
       <span class="overlay"></span>
@@ -13,60 +13,73 @@
     <!-- Content section (right side) -->
     <div class="content-wrap">
       <div class="entry entry-page">
-        <h2 class="entry-title">Welcome dear guest</h2>
+        <h2 class="entry-title">A Family-Friendly Retreat Awaits You</h2>
         <div class="entry-content">
-          <p>Founded in 1925, Barbie's has been a symbol of luxury and excellence in hospitality for nearly a century. Our commitment to providing exceptional service and creating unforgettable experiences has made us one of the most prestigious hotels in Paris.</p>
+          <p class="intro-text">This charming abode, lovingly crafted with family memories in mind, is more than just a rental; it's your sanctuary where laughter echoes through the garden and adventures await just beyond your doorstep.</p>
           
+          <div class="section-title">
+            <h3>Layout and Facilities</h3>
+            <p>Barbie's Beach House can sleep up to 10 adults and 6 Children comfortably.</p>
+          </div>
+
           <div class="features">
             <div class="feature">
-              <span class="mdi mdi-star feature-icon"></span>
-              <h4>Luxury Accommodations</h4>
-              <p>150 meticulously designed rooms and suites offering the perfect blend of comfort and elegance.</p>
+              <span class="mdi mdi-bed feature-icon"></span>
+              <h4>The Courtyard Bedrooms and Bathrooms</h4>
+              <p>Picture yourself unwinding on the wraparound balcony, in a lush courtyard directly off your bedrooms with vibrant blooms and the soothing murmur of water.</p>
+              <ul class="feature-list">
+                <li>Bedroom 1: Double Bed opens up onto the courtyard</li>
+                <li>Bedroom 2: Queen Bed opens onto court yard and living area</li>
+                <li>Shared bathroom</li>
+              </ul>
             </div>
-            <div class="feature">
-              <span class="mdi mdi-silverware feature-icon"></span>
-              <h4>Fine Dining</h4>
-              <p>Three world-class restaurants offering exceptional culinary experiences.</p>
-            </div>
-            <div class="feature">
-              <span class="mdi mdi-spa feature-icon"></span>
-              <h4>Wellness & Spa</h4>
-              <p>A sanctuary of relaxation with premium treatments and facilities.</p>
-            </div>
-          </div>
 
-          <div class="stats-container">
-            <div class="stat">
-              <span class="stat-number">98</span>
-              <span class="stat-label">Years of Excellence</span>
+            <div class="feature">
+              <span class="mdi mdi-water feature-icon"></span>
+              <h4>The River View Bedroom</h4>
+              <p>Step into this cozy ensuite bedroom, where you enjoy direct access the bunch house. This setup is ideal for parents who want to stay close to your kids while still enjoying your own space. Plus, if you prefer a little privacy, you can easily close off the access whenever you want.</p>
+              <ul class="feature-list">
+                <li>Bedroom 3: Queen size Bed</li>
+                <li>Ensuite Bathroom</li>
+              </ul>
             </div>
-            <div class="stat">
-              <span class="stat-number">150</span>
-              <span class="stat-label">Luxury Rooms</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">3</span>
-              <span class="stat-label">Restaurants</span>
-            </div>
-          </div>
-          
-          <div class="gallery-container">
-            <div class="image-grid">
-              <img src="/images/about/gallery/sample-gallery1.jpg" alt="Hotel Exterior" class="gallery-image">
-              <img src="/images/about/gallery/sample-gallery2.jpg" alt="Luxury Suite" class="gallery-image">
-              <img src="/images/accommodations/sample-accomodation.jpg" alt="Fine Dining" class="gallery-image">
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="testimonials-section">
-        <div class="container">
-          <div class="testimonial">
-            <blockquote>
-              <p>"An unforgettable experience. The attention to detail and level of service is unmatched. We'll definitely be returning."</p>
-              <cite>- James & Sarah Wilson</cite>
-            </blockquote>
+            <div class="feature">
+              <span class="mdi mdi-stairs feature-icon"></span>
+              <h4>Upstairs</h4>
+              <p>Venture upstairs to discover two spacious bedrooms that offer serene retreats after a day of adventure. A charming children's nook awaits with bunk beds and a crib, ensuring everyone has their own cozy corner.</p>
+              <ul class="feature-list">
+                <li>Bedroom 4: Queen Bed (cot for infant)</li>
+                <li>Bedroom 5: Queen Bed</li>
+                <li>Children's Nook: Double Bunk bed</li>
+                <li>Shared full bathroom</li>
+              </ul>
+            </div>
+
+            <div class="feature">
+              <span class="mdi mdi-home feature-icon"></span>
+              <h4>The Bunk House</h4>
+              <p>Imagine your children giggling in their own special haven—a delightful room designed just for them.</p>
+              <ul class="feature-list">
+                <li>Two Bunk Beds (Sleeps 4)</li>
+                <li>Sleeper Couch</li>
+                <li>Smart TV</li>
+                <li>Combination Table Set for Kids - Table Tennis Table, Pool Table, Table Football, Slide Hockey</li>
+                <li>Toy Box filled with beach toys</li>
+                <li>Outdoor bathroom with shower that brings the joy of nature indoors</li>
+              </ul>
+            </div>
+
+            <div class="feature">
+              <span class="mdi mdi-silverware-fork-knife feature-icon"></span>
+              <h4>Fully Functional Kitchen and Laundry</h4>
+              <p>A large expansive fully equipped chefs kitchen where culinary dreams come true - ready for family feasts and late-night snacks.</p>
+              <ul class="feature-list">
+                <li>Fully functional kitchen with gas SMEF stove with electric oven, fridge, dishwasher</li>
+                <li>Additional amenities include toaster, microwave, kettle, air fryer, food mixers, coffee machine, filtered water machine and sandwich maker</li>
+                <li>Washer, dryer and iron and ironing board</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -122,104 +135,77 @@ onMounted(() => {
   background: #fff;
 }
 
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  margin: 3rem 0 2rem;
+}
+
+.section-title h3 {
+  color: #A97C50;
+  margin-bottom: 1rem;
+}
+
 .feature {
   margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
+  padding: 2rem;
+  background: rgba(169, 124, 80, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  background: rgba(169, 124, 80, 0.1);
 }
 
 .feature-icon {
   font-size: 2rem;
-  color: #c49a6c;
+  color: #A97C50;
   margin-bottom: 1rem;
 }
 
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin: 2rem 0;
-  text-align: center;
+.feature h4 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
-.stat {
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
+.feature p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
-.stat-number {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #c49a6c;
-  margin-bottom: 0.5rem;
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.testimonials-section {
-  background: #f8f8f8;
-  padding: 4rem 0;
-  margin-top: 4rem;
-  text-align: center;
-}
-
-.testimonial blockquote {
-  font-size: 1.25rem;
-  font-style: italic;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.testimonial cite {
-  display: block;
-  margin-top: 1rem;
-  font-size: 0.9rem;
+.feature-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(169, 124, 80, 0.1);
   color: #666;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
+.feature-list li:last-child {
+  border-bottom: none;
 }
 
-.gallery-image {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.image-grid img:first-child {
-  grid-column: 1 / -1;
-}
-
-@media (max-width: 991px) {
-  .page-content {
-    display: block;
-  }
-
-  .hero-media {
-    position: relative;
-    width: 100%;
-    height: 40vh;
-  }
-
+@media (max-width: 768px) {
   .content-wrap {
     margin-left: 0;
     width: 100%;
-    padding: 50px 15px;
+    padding: 120px 20px;
   }
-
-  .stats-container {
-    grid-template-columns: 1fr;
+  
+  .hero-media {
+    display: none;
   }
 }
 </style>
