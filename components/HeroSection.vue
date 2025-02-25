@@ -4,7 +4,7 @@
       <template v-for="(slide, index) in slides" :key="index">
         <div 
           class="item owl-lazy" 
-          :class="{ 'item-video': slide.video, 'light-hero-colors': slide.lightColors }"
+          :class="{ 'item-video': slide.video, 'slide-light': slide.lightColors }"
           :data-src="slide.image"
         >
           <template v-if="slide.video">
@@ -95,10 +95,10 @@ onMounted(async () => {
     $(event.target).find('.owl-item.active video').each(function() {
       this.play()
     })
-    if ($(event.target).find('.owl-item.active .light-hero-colors').length > 0) {
-      document.body.classList.add('light-hero-colors')
+    if ($(event.target).find('.owl-item.active .slide-light').length > 0) {
+      $(event.target).find('.owl-item.active').addClass('slide-light')
     } else {
-      document.body.classList.remove('light-hero-colors')
+      $(event.target).find('.owl-item.active').removeClass('slide-light')
     }
   }
 
