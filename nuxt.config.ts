@@ -18,12 +18,12 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'LeLuxe',
+      title: 'Barbie\'s Beach House - Pringle Bay',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
-        { name: 'description', content: 'LeLuxe is fully responsive creative HTML site template that looks great on any device.' },
-        { name: 'keywords', content: 'Castilo, HTML, Template, Design, Development' }
+        { name: 'description', content: 'Barbie\'s Beach House - Your perfect coastal escape in Pringle Bay. Luxury accommodation with stunning ocean views.' },
+        { name: 'keywords', content: 'Barbies Beach House, Pringle Bay, Accommodation, Beach House, Luxury Stay, Cape Town' }
       ],
       link: [
         { rel: 'shortcut icon', href: '/favicon.png' },
