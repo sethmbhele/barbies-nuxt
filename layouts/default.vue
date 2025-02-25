@@ -1,36 +1,6 @@
 <template>
   <div :class="wrapperClasses">
-    <header id="identity">
-      <div class="logo">
-        <h1>
-          <NuxtLink to="/" class="custom-logo-link" rel="home">
-            <img src="/images/shared/logo.png" class="custom-logo" width="200" alt="Barbie's Beach House">
-          </NuxtLink>
-        </h1>
-      </div>
-    </header>
-
-    <div id="site-menu">
-      <nav class="nav-menu">
-        <ul>
-          <li class="menu-item"><NuxtLink to="/">Home</NuxtLink></li>
-          <li class="menu-item"><NuxtLink to="/about">About</NuxtLink></li>
-          <li class="menu-item"><NuxtLink to="/accommodations">Living</NuxtLink></li>
-          <li class="menu-item"><NuxtLink to="/dining">Dining</NuxtLink></li>
-          <li class="menu-item"><NuxtLink to="/contact">Contact</NuxtLink></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div id="social-profiles">
-      <nav class="social-menu">
-        <ul>
-          <li><a href="http://facebook.com" target="_blank"><span class="mdi mdi-facebook-box"></span></a></li>
-          <li><a href="http://twitter.com" target="_blank"><span class="mdi mdi-twitter-box"></span></a></li>
-          <li><a href="http://instagram.com" target="_blank"><span class="mdi mdi-instagram"></span></a></li>
-        </ul>
-      </nav>
-    </div>
+    <TopHeader />
 
     <slot />
 
@@ -41,6 +11,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import TopHeader from '~/components/TopHeader.vue'
 
 const route = useRoute()
 

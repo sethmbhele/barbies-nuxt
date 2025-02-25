@@ -1,0 +1,20 @@
+<template>
+  <div>
+    <div id="site-menu">
+      <nav class="nav-menu">
+        <ul>
+          <li class="menu-item"><NuxtLink to="/">Home</NuxtLink></li>
+          <li class="menu-item"><NuxtLink to="/about">About</NuxtLink></li>
+          <li class="menu-item"><NuxtLink to="/accommodations">Living</NuxtLink></li>
+          <li class="menu-item"><NuxtLink to="/dining">Dining</NuxtLink></li>
+          <li class="menu-item"><NuxtLink to="/contact">Contact</NuxtLink></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+// Component remains simple as it inherits all global styles
+// and mobile functionality from style.css
+</script>
