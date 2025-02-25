@@ -47,16 +47,42 @@ body {
 /* Fix nav menu font weights */
 .nav-menu {
   font-family: 'Work Sans', sans-serif !important;
+  font-size: 16px !important;
 }
 
-.nav-menu a {
-  font-weight: 400 !important;
-  font-family: 'Work Sans', sans-serif !important;
+@media (min-width: 1200px) {
+  .nav-menu {
+    font-size: 18px !important;
+  }
 }
 
-.nav-menu .current-menu-item > a {
+/* Base nav link styles */
+.nav-menu > ul > li > a {
   font-weight: 600 !important;
   font-family: 'Work Sans', sans-serif !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Hover and active states */
+.nav-menu > ul > li > a:hover,
+.nav-menu > ul > li > a:focus,
+.nav-menu > ul > li > a.router-link-active {
+  font-weight: 700 !important;
+}
+
+/* Underline styles */
+.nav-menu > ul > li > a:after {
+  background-color: #A97C50 !important;
+  transition: transform 0.3s ease !important;
+  transform: scaleX(0) !important;
+  transform-origin: center !important;
+}
+
+/* Show underline on hover and active */
+.nav-menu > ul > li > a:hover:after,
+.nav-menu > ul > li > a:focus:after,
+.nav-menu > ul > li > a.router-link-active:after {
+  transform: scaleX(1) !important;
 }
 
 /* Social icons positioning for tablet */
@@ -85,4 +111,9 @@ body {
   .nav-menu .current-menu-item > a {
     background-color: #f2f2f2 !important;
   }
+}
+
+/* Make all carousel h2 text white */
+.hero-media .text h2 {
+  color: #fff !important;
 }
