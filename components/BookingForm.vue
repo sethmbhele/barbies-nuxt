@@ -89,3 +89,101 @@ const handleSubmit = () => {
   })
 }
 </script>
+
+<style scoped>
+.booking-form {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  background: #fff;
+  padding: 15px 30px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-top: 1px solid rgba(169, 124, 80, 0.1);
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.field {
+  flex: 1;
+  position: relative;
+}
+
+.field label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.field-value {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.field-separator {
+  border-right: 1px solid rgba(169, 124, 80, 0.1);
+}
+
+.button-color {
+  background: #A97C50;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.button-color:hover {
+  background: #8b6541;
+}
+
+.mdi {
+  color: #A97C50;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .booking-form {
+    left: 0;
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  form {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .field {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .field-separator {
+    border-right: none;
+  }
+
+  .button-color {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .field-value .long {
+    display: none;
+  }
+
+  .field-value .short {
+    display: inline;
+  }
+}
+</style>
