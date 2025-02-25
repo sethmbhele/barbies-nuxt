@@ -1,67 +1,225 @@
 <template>
-  <div class="contact">
-    <PageHero 
-      title="Contact Us" 
-      subtitle="Get in touch with our team"
-      image="/images/shared/hero2.jpg"
-    />
+  <div class="page-content">
+    <!-- Hero section (left side) -->
+    <section class="hero-media">
+      <div class="owl-carousel" data-expand-duration="800">
+        <div class="item">
+          <img src="/images/shared/contact-hero.jpg" alt="Contact Us" class="hero-image">
+        </div>
+      </div>
+      <span class="overlay"></span>
+    </section>
 
-    <div class="content-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="contact-info">
-              <h2>Get in Touch</h2>
-              <p>We'd love to hear from you. Please feel free to contact us using any of the methods below.</p>
-              
-              <div class="contact-details">
-                <div class="detail">
-                  <span class="mdi mdi-map-marker"></span>
-                  <div class="text">
-                    <h3>Address</h3>
-                    <p>123 Luxury Avenue<br>Paris, France 75001</p>
-                  </div>
-                </div>
+    <!-- Content section (right side) -->
+    <div class="content-wrap">
+      <div class="entry entry-page">
+        <h2 class="entry-title">Get in Touch</h2>
+        <div class="entry-content">
+          <p class="intro-text">We'd love to hear from you. Whether you have questions about availability, special requirements, or local recommendations, we're here to help.</p>
 
-                <div class="detail">
-                  <span class="mdi mdi-phone"></span>
-                  <div class="text">
-                    <h3>Phone</h3>
-                    <p>+33 1 23 45 67 89</p>
-                  </div>
-                </div>
-
-                <div class="detail">
-                  <span class="mdi mdi-email"></span>
-                  <div class="text">
-                    <h3>Email</h3>
-                    <p>info@barbies.com</p>
-                  </div>
-                </div>
-              </div>
+          <div class="contact-section">
+            <div class="contact-item">
+              <span class="mdi mdi-phone feature-icon"></span>
+              <h4>Phone</h4>
+              <p>Call or WhatsApp: +27 123 456 789</p>
             </div>
-          </div>
 
-          <div class="col-lg-6">
-            <ContactForm />
+            <div class="contact-item">
+              <span class="mdi mdi-email feature-icon"></span>
+              <h4>Email</h4>
+              <p>bookings@barbiesbeachhouse.co.za</p>
+            </div>
+
+            <div class="contact-item">
+              <span class="mdi mdi-map-marker feature-icon"></span>
+              <h4>Location</h4>
+              <p>123 Beach Road<br>Pringle Bay<br>Western Cape<br>South Africa</p>
+            </div>
+
+            <div class="contact-form">
+              <h4>Send us a Message</h4>
+              <form @submit.prevent="handleSubmit">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" v-model="form.name" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" v-model="form.email" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" v-model="form.message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Send Message</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="map-section">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.2922926156740993!3d48.858370079287475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sus!4v1631234567890!5m2!1sen!2sus" 
-        width="100%" 
-        height="450" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy"
-      ></iframe>
-    </div>
   </div>
 </template>
 
-<script setup lang="ts">
-// Component imports are handled by Nuxt auto-imports
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+})
+
+const handleSubmit = () => {
+  // Handle form submission
+  console.log('Form submitted:', form.value)
+  // Add actual form submission logic here
+}
+
+onMounted(() => {
+  // Initialize owl carousel
+  if (typeof window !== 'undefined' && window.$) {
+    window.$('.owl-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      smartSpeed: 800
+    })
+  }
+})
 </script>
+
+<style scoped>
+.page-content {
+  display: flex;
+  min-height: 100vh;
+}
+
+.hero-media {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-wrap {
+  margin-left: 50%;
+  width: 50%;
+  padding: 170px 50px;
+  background: #fff;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.contact-section {
+  margin-top: 2rem;
+}
+
+.contact-item {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: rgba(169, 124, 80, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(169, 124, 80, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #A97C50;
+  margin-bottom: 1rem;
+}
+
+.contact-item h4 {
+  color: #A97C50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.contact-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-form {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(169, 124, 80, 0.05);
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid rgba(169, 124, 80, 0.2);
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #A97C50;
+}
+
+.submit-button {
+  background: #A97C50;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #8b6541;
+}
+
+@media (max-width: 768px) {
+  .content-wrap {
+    margin-left: 0;
+    width: 100%;
+    padding: 120px 20px;
+  }
+  
+  .hero-media {
+    display: none;
+  }
+}
+</style>

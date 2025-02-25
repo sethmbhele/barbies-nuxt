@@ -1,81 +1,59 @@
 <template>
-  <div class="dining">
-    <PageHero 
-      title="Fine Dining" 
-      subtitle="Experience culinary excellence"
-      image="/images/dining/dining.jpg"
-    />
+  <div class="page-content">
+    <!-- Hero section (left side) -->
+    <section class="hero-media">
+      <div class="owl-carousel" data-expand-duration="800">
+        <div class="item">
+          <img src="/images/shared/faq-hero.jpg" alt="FAQs" class="hero-image">
+        </div>
+      </div>
+      <span class="overlay"></span>
+    </section>
 
-    <div class="content-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="entry">
-              <div class="entry-content">
-                <h2>Our Restaurant</h2>
-                <p>Experience the finest French cuisine in an elegant setting. Our master chefs create exceptional dishes using the freshest local ingredients.</p>
-                
-                <div class="menu-section">
-                  <DiningMenuCategory title="Appetizers">
-                    <DiningMenuItem 
-                      v-for="item in appetizers" 
-                      :key="item.id" 
-                      :title="item.title"
-                      :price="item.price"
-                      :description="item.description"
-                    />
-                  </DiningMenuCategory>
-
-                  <DiningMenuCategory title="Main Courses">
-                    <DiningMenuItem 
-                      v-for="item in mainCourses" 
-                      :key="item.id" 
-                      :title="item.title"
-                      :price="item.price"
-                      :description="item.description"
-                    />
-                  </DiningMenuCategory>
-
-                  <DiningMenuCategory title="Desserts">
-                    <DiningMenuItem 
-                      v-for="item in desserts" 
-                      :key="item.id" 
-                      :title="item.title"
-                      :price="item.price"
-                      :description="item.description"
-                    />
-                  </DiningMenuCategory>
-                </div>
-              </div>
+    <!-- Content section (right side) -->
+    <div class="content-wrap">
+      <div class="entry entry-page">
+        <h2 class="entry-title">Frequently Asked Questions</h2>
+        <div class="entry-content">
+          <div class="faq-section">
+            <div class="faq-item">
+              <h4>What time is check-in and check-out?</h4>
+              <p>Check-in is from 3:00 PM, and check-out is by 10:00 AM. Early check-in or late check-out may be available upon request.</p>
             </div>
-          </div>
 
-          <div class="col-lg-4">
-            <div class="sidebar">
-              <div class="widget widget-opening-hours">
-                <h3 class="widget-title">Opening Hours</h3>
-                <ul>
-                  <li>
-                    <span>Monday - Friday</span>
-                    <span>12:00 - 23:00</span>
-                  </li>
-                  <li>
-                    <span>Saturday</span>
-                    <span>12:00 - 00:00</span>
-                  </li>
-                  <li>
-                    <span>Sunday</span>
-                    <span>12:00 - 23:00</span>
-                  </li>
-                </ul>
-              </div>
+            <div class="faq-item">
+              <h4>Is the house suitable for children?</h4>
+              <p>Absolutely! We have dedicated spaces for children including the Bunk House with games and toys, a playhouse in the garden, and child-friendly amenities throughout.</p>
+            </div>
 
-              <div class="widget widget-reservation">
-                <h3 class="widget-title">Make a Reservation</h3>
-                <p>For reservations, please call us or book online:</p>
-                <p class="phone">+33 1 23 45 67 89</p>
-                <a href="#" class="button button-filled">Book a Table</a>
-              </div>
+            <div class="faq-item">
+              <h4>What happens during load shedding?</h4>
+              <p>We have an Uninterruptible Power Supply (UPS) system to ensure essential services continue during load shedding.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Is there parking available?</h4>
+              <p>Yes, we have secure parking available on the property for multiple vehicles.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Is Wi-Fi available?</h4>
+              <p>Yes, we provide complimentary high-speed Wi-Fi throughout the property.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Are linens and towels provided?</h4>
+              <p>Yes, we provide all bed linens, bath towels, and beach towels for your stay.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Is the kitchen fully equipped?</h4>
+              <p>Yes, our kitchen is fully equipped with modern appliances, cookware, and utensils for all your cooking needs.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4>How far is the beach?</h4>
+              <p>The beach is just a short walk away from the property, making it perfect for daily beach visits.</p>
             </div>
           </div>
         </div>
@@ -84,67 +62,90 @@
   </div>
 </template>
 
-<script setup lang="ts">
-const appetizers = [
-  {
-    id: 1,
-    title: 'French Onion Soup',
-    price: '18',
-    description: 'Classic French onion soup with melted Gruyère cheese'
-  },
-  {
-    id: 2,
-    title: 'Escargots de Bourgogne',
-    price: '22',
-    description: 'Burgundy snails in garlic-herb butter'
-  },
-  {
-    id: 3,
-    title: 'Foie Gras',
-    price: '28',
-    description: 'Duck liver terrine with brioche and fig jam'
-  }
-]
+<script setup>
+import { onMounted } from 'vue'
 
-const mainCourses = [
-  {
-    id: 1,
-    title: 'Coq au Vin',
-    price: '42',
-    description: 'Braised chicken in red wine with mushrooms and pearl onions'
-  },
-  {
-    id: 2,
-    title: 'Beef Bourguignon',
-    price: '48',
-    description: 'Classic beef stew in red wine sauce'
-  },
-  {
-    id: 3,
-    title: 'Duck à l\'Orange',
-    price: '52',
-    description: 'Roasted duck breast with orange sauce'
+onMounted(() => {
+  // Initialize owl carousel
+  if (typeof window !== 'undefined' && window.$) {
+    window.$('.owl-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      smartSpeed: 800
+    })
   }
-]
-
-const desserts = [
-  {
-    id: 1,
-    title: 'Crème Brûlée',
-    price: '16',
-    description: 'Classic vanilla custard with caramelized sugar'
-  },
-  {
-    id: 2,
-    title: 'Tarte Tatin',
-    price: '15',
-    description: 'Upside-down caramelized apple tart'
-  },
-  {
-    id: 3,
-    title: 'Chocolate Soufflé',
-    price: '18',
-    description: 'Warm chocolate soufflé with vanilla ice cream'
-  }
-]
+})
 </script>
+
+<style scoped>
+.page-content {
+  display: flex;
+  min-height: 100vh;
+}
+
+.hero-media {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-wrap {
+  margin-left: 50%;
+  width: 50%;
+  padding: 170px 50px;
+  background: #fff;
+}
+
+.faq-section {
+  margin-top: 2rem;
+}
+
+.faq-item {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: rgba(169, 124, 80, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: rgba(169, 124, 80, 0.1);
+}
+
+.faq-item h4 {
+  color: #A97C50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .content-wrap {
+    margin-left: 0;
+    width: 100%;
+    padding: 120px 20px;
+  }
+  
+  .hero-media {
+    display: none;
+  }
+}
+</style>
