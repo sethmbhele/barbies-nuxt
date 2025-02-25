@@ -16,9 +16,10 @@ import TopHeader from '~/components/TopHeader.vue'
 const route = useRoute()
 
 // Pages that should show booking component
-const pagesWithBooking = ['/', '/about', '/accommodations', '/house']
+const pagesWithBooking = ['/', '/about', '/accommodations', '/the-house']
 
 const showBooking = computed(() => {
+  console.log('Current route path:', route.path)
   return pagesWithBooking.includes(route.path)
 })
 
