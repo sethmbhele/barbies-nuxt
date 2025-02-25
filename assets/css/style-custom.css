@@ -116,11 +116,7 @@ body {
 
 /* Carousel text styles - scoped to slides only */
 .hero-media .owl-carousel .item .text h2 {
-  color: #000 !important; /* Default dark text */
-}
-
-.hero-media .owl-carousel .item.slide-light .text h2 {
-  color: #fff !important; /* Light text for light slides */
+  color: #fff !important; /* All slides have white text */
 }
 
 /* Remove any global light-hero-colors styles that might affect navigation */
