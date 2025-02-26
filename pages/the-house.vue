@@ -129,7 +129,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Discover our spacious 5-bedroom beach house with bunk house, perfect for families and groups. Modern amenities, chef's kitchen, and entertainment areas.'
+      content: "Discover our spacious 5-bedroom beach house with bunk house, perfect for families and groups. Modern amenities, chef's kitchen, and entertainment areas."
     }
   ]
 })
