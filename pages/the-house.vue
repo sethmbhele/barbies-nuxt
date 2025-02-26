@@ -2,30 +2,39 @@
   <div class="house-page">
     <!-- Hero Section -->
     <section class="hero-section">
-      <ImageGallery :images="galleryImages" @openGallery="openGallery" />
+      <div class="hero-background">
+        <img src="/images/shared/hero2.jpg" alt="Beach House Exterior" class="hero-image">
+        <div class="hero-overlay">
+          <div class="hero-content">
+            <h1>A Family-Friendly Retreat Awaits You</h1>
+            <p class="subtitle">Your sanctuary where laughter echoes through the garden and adventures await just beyond your doorstep.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Main Content -->
     <div class="content-container">
-      <!-- Header Section -->
-      <div class="header-section">
-        <h1>A Family-Friendly Retreat Awaits You</h1>
-        <p class="subtitle">Your sanctuary where laughter echoes through the garden and adventures await just beyond your doorstep.</p>
-        <div class="quick-info">
-          <div class="info-item">
-            <span class="mdi mdi-account-group"></span>
-            <span>Sleeps up to 10 adults, 6 children</span>
-          </div>
-          <div class="info-item">
-            <span class="mdi mdi-bed"></span>
-            <span>5 Bedrooms + Bunk House</span>
-          </div>
-          <div class="info-item">
-            <span class="mdi mdi-shower"></span>
-            <span>3 Bathrooms</span>
-          </div>
+      <!-- Quick Info Section -->
+      <div class="quick-info">
+        <div class="info-item">
+          <span class="mdi mdi-account-group"></span>
+          <span>Sleeps up to 10 adults, 6 children</span>
+        </div>
+        <div class="info-item">
+          <span class="mdi mdi-bed"></span>
+          <span>5 Bedrooms + Bunk House</span>
+        </div>
+        <div class="info-item">
+          <span class="mdi mdi-shower"></span>
+          <span>3 Bathrooms</span>
         </div>
       </div>
+
+      <!-- Image Gallery -->
+      <section class="gallery-section">
+        <ImageGallery :images="galleryImages" @openGallery="openGallery" />
+      </section>
 
       <!-- Features Grid -->
       <div class="features-grid">
@@ -141,29 +150,63 @@ useHead({
   background: #fff;
 }
 
+.hero-section {
+  width: 100%;
+  height: 70vh;
+  min-height: 600px;
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.hero-background {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 24px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-content .subtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
 .content-container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 24px;
-}
-
-.header-section {
-  margin: 0 0 48px;
-}
-
-.header-section h1 {
-  font-size: 26px;
-  color: #A97C50;
-  margin-bottom: 8px;
-  font-weight: 600;
-  line-height: 30px;
-}
-
-.subtitle {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 24px;
-  line-height: 20px;
 }
 
 .quick-info {
@@ -191,6 +234,10 @@ useHead({
   color: #666;
   font-size: 16px;
   font-weight: 400;
+}
+
+.gallery-section {
+  margin-bottom: 48px;
 }
 
 .features-grid {
@@ -261,12 +308,21 @@ useHead({
 }
 
 @media (max-width: 768px) {
-  .content-container {
-    padding: 24px 16px;
+  .hero-section {
+    height: 50vh;
+    min-height: 400px;
   }
 
-  .header-section {
-    margin-bottom: 32px;
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content .subtitle {
+    font-size: 18px;
+  }
+
+  .content-container {
+    padding: 24px 16px;
   }
 
   .quick-info {
