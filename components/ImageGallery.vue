@@ -37,27 +37,29 @@ const openGallery = (index: number) => {
 <style scoped>
 .image-gallery {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  position: relative;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 0.5rem;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 60vh;
-  min-height: 400px;
+  height: 80vh;
+  min-height: 500px;
+  max-height: 700px;
 }
 
 .main-image {
-  grid-row: 1 / span 2;
+  position: relative;
   height: 100%;
+  overflow: hidden;
 }
 
 .secondary-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 0.5rem;
 }
 
@@ -66,18 +68,17 @@ const openGallery = (index: number) => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.main-image img:hover,
-.secondary-image img:hover {
-  transform: scale(1.02);
+.main-image:hover img,
+.secondary-image:hover img {
+  transform: scale(1.05);
 }
 
 .secondary-image {
   position: relative;
-  height: 100%;
+  overflow: hidden;
 }
 
 .more-photos {
@@ -93,16 +94,28 @@ const openGallery = (index: number) => {
   cursor: pointer;
   font-weight: 500;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.more-photos:hover {
+  transform: translateY(-2px);
 }
 
 .more-photos .mdi {
   font-size: 1.2em;
 }
 
+@media (max-width: 1024px) {
+  .gallery-grid {
+    height: 60vh;
+  }
+}
+
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr;
     height: auto;
+    min-height: 300px;
   }
 
   .main-image {

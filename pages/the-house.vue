@@ -145,6 +145,11 @@ useHead({
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  margin-top: -4rem;
+  position: relative;
+  background: white;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
 }
 
 .header-section {
@@ -153,76 +158,85 @@ useHead({
 }
 
 .header-section h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #333;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #666;
   max-width: 800px;
   margin: 0 auto 2rem;
+  line-height: 1.6;
 }
 
 .quick-info {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
   margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(169, 124, 80, 0.05);
+  border-radius: 12px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   color: #666;
+  font-size: 1.1rem;
 }
 
 .info-item .mdi {
   color: #A97C50;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .feature-card {
-  background: rgba(169, 124, 80, 0.05);
-  border-radius: 12px;
+  background: #fff;
+  border-radius: 16px;
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(169, 124, 80, 0.1);
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(169, 124, 80, 0.1);
+  box-shadow: 0 8px 30px rgba(169, 124, 80, 0.15);
 }
 
 .feature-card.highlight {
-  background: rgba(169, 124, 80, 0.1);
+  background: rgba(169, 124, 80, 0.05);
+  border: none;
 }
 
 .feature-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #A97C50;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .feature-card h3 {
   color: #333;
   margin-bottom: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .feature-card p {
   color: #666;
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
 
 .feature-card ul {
@@ -232,9 +246,10 @@ useHead({
 
 .feature-card ul li {
   color: #666;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   padding-left: 1.5rem;
   position: relative;
+  line-height: 1.5;
 }
 
 .feature-card ul li::before {
@@ -245,23 +260,49 @@ useHead({
   font-weight: bold;
 }
 
+@media (max-width: 1024px) {
+  .content-container {
+    margin-top: -2rem;
+  }
+
+  .header-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .content-container {
-    padding: 1rem;
+    padding: 1.5rem;
+    margin-top: 0;
+    border-radius: 0;
   }
 
   .header-section h1 {
     font-size: 2rem;
   }
 
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
   .quick-info {
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
   }
 }
 </style>
