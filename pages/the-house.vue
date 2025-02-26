@@ -142,101 +142,101 @@ useHead({
 }
 
 .content-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
-  margin-top: -4rem;
-  position: relative;
-  background: white;
-  border-radius: 16px 16px 0 0;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+  padding: 24px;
 }
 
 .header-section {
-  margin: 2rem 0 3rem;
-  text-align: center;
+  margin: 0 0 48px;
 }
 
 .header-section h1 {
-  font-size: 2.8rem;
-  color: #333;
-  margin-bottom: 1rem;
+  font-size: 26px;
+  color: #222;
+  margin-bottom: 8px;
   font-weight: 600;
+  line-height: 30px;
 }
 
 .subtitle {
-  font-size: 1.3rem;
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
+  font-size: 16px;
+  color: #717171;
+  margin-bottom: 24px;
+  line-height: 20px;
 }
 
 .quick-info {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 2rem;
-  padding: 2rem;
-  background: rgba(169, 124, 80, 0.05);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  background: #F7F7F7;
   border-radius: 12px;
+  margin-bottom: 48px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: #666;
-  font-size: 1.1rem;
+  gap: 12px;
 }
 
 .info-item .mdi {
-  color: #A97C50;
-  font-size: 2rem;
+  color: #222;
+  font-size: 24px;
+}
+
+.info-item span {
+  color: #222;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
 }
 
 .feature-card {
   background: #fff;
-  border-radius: 16px;
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(169, 124, 80, 0.1);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #DDDDDD;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(169, 124, 80, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 .feature-card.highlight {
-  background: rgba(169, 124, 80, 0.05);
+  background: #F7F7F7;
   border: none;
 }
 
 .feature-icon {
-  font-size: 2.5rem;
-  color: #A97C50;
-  margin-bottom: 1.5rem;
+  font-size: 24px;
+  color: #222;
+  margin-bottom: 16px;
 }
 
 .feature-card h3 {
-  color: #333;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 8px;
+  font-size: 18px;
   font-weight: 600;
+  line-height: 22px;
 }
 
 .feature-card p {
-  color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
+  color: #717171;
+  margin-bottom: 16px;
+  line-height: 20px;
+  font-size: 14px;
 }
 
 .feature-card ul {
@@ -245,64 +245,41 @@ useHead({
 }
 
 .feature-card ul li {
-  color: #666;
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
+  color: #717171;
+  margin-bottom: 8px;
+  padding-left: 24px;
   position: relative;
-  line-height: 1.5;
+  line-height: 20px;
+  font-size: 14px;
 }
 
 .feature-card ul li::before {
   content: "•";
-  color: #A97C50;
+  color: #717171;
   position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-
-@media (max-width: 1024px) {
-  .content-container {
-    margin-top: -2rem;
-  }
-
-  .header-section h1 {
-    font-size: 2.4rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
+  left: 8px;
 }
 
 @media (max-width: 768px) {
   .content-container {
-    padding: 1.5rem;
-    margin-top: 0;
-    border-radius: 0;
+    padding: 24px 16px;
   }
 
-  .header-section h1 {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
+  .header-section {
+    margin-bottom: 32px;
   }
 
   .quick-info {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-    padding: 1.5rem;
+    padding: 16px;
+    gap: 16px;
   }
 
   .features-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 24px;
   }
 
   .feature-card {
-    padding: 1.5rem;
+    padding: 16px;
   }
 }
 </style>
