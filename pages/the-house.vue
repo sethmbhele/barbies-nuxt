@@ -153,7 +153,7 @@ useHead({
 
 .header-section h1 {
   font-size: 26px;
-  color: #222;
+  color: #A97C50;
   margin-bottom: 8px;
   font-weight: 600;
   line-height: 30px;
@@ -161,7 +161,7 @@ useHead({
 
 .subtitle {
   font-size: 16px;
-  color: #717171;
+  color: #666;
   margin-bottom: 24px;
   line-height: 20px;
 }
@@ -171,7 +171,7 @@ useHead({
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
   padding: 24px;
-  background: #F7F7F7;
+  background: rgba(169, 124, 80, 0.05);
   border-radius: 12px;
   margin-bottom: 48px;
 }
@@ -183,12 +183,12 @@ useHead({
 }
 
 .info-item .mdi {
-  color: #222;
+  color: #A97C50;
   font-size: 24px;
 }
 
 .info-item span {
-  color: #222;
+  color: #666;
   font-size: 16px;
   font-weight: 400;
 }
@@ -204,28 +204,28 @@ useHead({
   background: #fff;
   padding: 24px;
   border-radius: 12px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid rgba(169, 124, 80, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(169, 124, 80, 0.08);
 }
 
 .feature-card.highlight {
-  background: #F7F7F7;
+  background: rgba(169, 124, 80, 0.05);
   border: none;
 }
 
 .feature-icon {
   font-size: 24px;
-  color: #222;
+  color: #A97C50;
   margin-bottom: 16px;
 }
 
 .feature-card h3 {
-  color: #222;
+  color: #A97C50;
   margin-bottom: 8px;
   font-size: 18px;
   font-weight: 600;
@@ -233,7 +233,7 @@ useHead({
 }
 
 .feature-card p {
-  color: #717171;
+  color: #666;
   margin-bottom: 16px;
   line-height: 20px;
   font-size: 14px;
@@ -245,7 +245,7 @@ useHead({
 }
 
 .feature-card ul li {
-  color: #717171;
+  color: #666;
   margin-bottom: 8px;
   padding-left: 24px;
   position: relative;
@@ -255,7 +255,7 @@ useHead({
 
 .feature-card ul li::before {
   content: "•";
-  color: #717171;
+  color: #A97C50;
   position: absolute;
   left: 8px;
 }
