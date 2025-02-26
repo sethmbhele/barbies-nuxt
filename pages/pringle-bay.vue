@@ -1,98 +1,115 @@
 <template>
-  <div class="page-content">
-    <!-- Hero section (left side) -->
-    <section class="hero-media">
-      <div class="owl-carousel" data-expand-duration="800">
-        <div class="item">
-          <img src="/images/hero/hero-1.jpg" alt="Pringle Bay" class="hero-image">
-        </div>
-      </div>
-      <span class="overlay"></span>
-    </section>
-
-    <!-- Content section (right side) -->
-    <div class="content-wrap">
-      <div class="entry entry-page">
-        <h2 class="entry-title">Discover Pringle Bay</h2>
-        <div class="entry-content">
-          <p class="intro-text">Nestled between mountains and sea, Barbie's Beach House is not just about comfort; it's about embracing the stunning surroundings. Just beyond your door lie Pringle Bay's pristine beaches, inviting you to bask in the sun or embark on thrilling outdoor adventures.</p>
-          
-          <div class="features">
-            <div class="feature feature-highlight">
-              <span class="mdi mdi-beach feature-icon"></span>
-              <h4>Beach Life & Activities</h4>
-              <div class="feature-content">
-                <p>Start your adventure at the pristine Pringle Bay Beach, where you can bask in the sun, swim in the calm lagoon formed by the Buffel's River, or build sandcastles with your family. For the more adventurous, try your hand at fishing or whale watching, especially during the migration season when these majestic creatures grace the waters nearby.</p>
-                <p>If you're seeking thrills, engage in water sports such as kayaking or surfing, with equipment rentals available in the village. The beach's rock pools teem with marine life, offering endless opportunities to connect with nature.</p>
-              </div>
-            </div>
-
-            <div class="feature">
-              <span class="mdi mdi-hiking feature-icon"></span>
-              <h4>Nature & Exploration</h4>
-              <p>Whether it's hiking through scenic trails or exploring the nearby Harold Porter Botanical Gardens, every moment spent here is an opportunity to connect with nature. The gardens offer serene walking paths and breathtaking flora, perfect for a leisurely afternoon stroll.</p>
-            </div>
-
-            <div class="feature feature-highlight">
-              <span class="mdi mdi-food-fork-drink feature-icon"></span>
-              <h4>Culinary Delights</h4>
-              <div class="feature-content">
-                <p>Pringle Bay has blossomed into a culinary destination, delighting both locals and visitors with its diverse and vibrant dining scene. Among the standout establishments:</p>
-                <ul class="dining-options">
-                  <li><strong>The Book Club</strong> - A charming restaurant offering unique fusion flavors crafted from locally sourced South African produce</li>
-                  <li><strong>Cork</strong> - Delights wine enthusiasts with an extensive selection of local wines paired with seasonal dishes</li>
-                  <li><strong>Hangklip Hotel</strong> - Enjoy delicious meals and a lively music program featuring local talent</li>
-                  <li><strong>Hook, Line and Sinker</strong> - Fresh seafood in a casual setting</li>
-                  <li><strong>The Burger Bar</strong> - Artisanal pizzas and gourmet burgers</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="feature">
-              <span class="mdi mdi-binoculars feature-icon"></span>
-              <h4>Wildlife and Nature</h4>
-              <p>The area is part of the UNESCO-protected Kogelberg Biosphere Reserve. Watch for whales during migration season and enjoy the antics of the local penguin colony at Stony Point.</p>
-            </div>
+  <div class="pringle-bay-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-background">
+        <img src="/images/hero/hero-1.jpg" alt="Pringle Bay" class="hero-image">
+        <div class="hero-overlay">
+          <div class="hero-content">
+            <h1>Discover Pringle Bay</h1>
+            <p class="subtitle">Nestled between mountains and sea, Barbie's Beach House is not just about comfort; it's about embracing the stunning surroundings.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="content-container">
+      <!-- Features Sections -->
+      <div class="features-sections">
+        <section class="feature-section">
+          <div class="feature-content">
+            <span class="mdi mdi-beach feature-icon"></span>
+            <h3>Beach Life & Activities</h3>
+            <p>Start your adventure at the pristine Pringle Bay Beach, where you can bask in the sun, swim in the calm lagoon formed by the Buffel's River, or build sandcastles with your family.</p>
+            <ul>
+              <li>Swimming in calm lagoon waters</li>
+              <li>Whale watching during migration season</li>
+              <li>Fishing and water sports</li>
+              <li>Rock pools exploration</li>
+              <li>Equipment rentals available in village</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Pringle Bay Beach">
+          </div>
+        </section>
+
+        <section class="feature-section reverse">
+          <div class="feature-content">
+            <span class="mdi mdi-hiking feature-icon"></span>
+            <h3>Nature & Exploration</h3>
+            <p>Immerse yourself in the natural wonders of the Kogelberg Biosphere Reserve, where every trail tells a story and every vista takes your breath away.</p>
+            <ul>
+              <li>Scenic hiking trails</li>
+              <li>Harold Porter Botanical Gardens</li>
+              <li>UNESCO-protected reserve</li>
+              <li>Mountain biking routes</li>
+              <li>Bird watching opportunities</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Hiking Trails">
+          </div>
+        </section>
+
+        <section class="feature-section">
+          <div class="feature-content">
+            <span class="mdi mdi-food-fork-drink feature-icon"></span>
+            <h3>Culinary Delights</h3>
+            <p>Pringle Bay has blossomed into a culinary destination, delighting both locals and visitors with its diverse and vibrant dining scene.</p>
+            <ul>
+              <li><strong>The Book Club</strong> - Unique fusion flavors from local produce</li>
+              <li><strong>Cork</strong> - Extensive local wine selection</li>
+              <li><strong>Hangklip Hotel</strong> - Live music and great food</li>
+              <li><strong>Hook, Line and Sinker</strong> - Fresh seafood</li>
+              <li><strong>The Burger Bar</strong> - Artisanal pizzas and burgers</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Local Restaurants">
+          </div>
+        </section>
+
+        <section class="feature-section reverse">
+          <div class="feature-content">
+            <span class="mdi mdi-binoculars feature-icon"></span>
+            <h3>Wildlife and Nature</h3>
+            <p>Experience the rich biodiversity of the Kogelberg Biosphere Reserve, home to diverse flora and fauna that make every visit unique.</p>
+            <ul>
+              <li>Whale watching spots</li>
+              <li>Penguin colony at Stony Point</li>
+              <li>Rich marine life</li>
+              <li>Endemic fynbos vegetation</li>
+              <li>Bird watching paradise</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Local Wildlife">
+          </div>
+        </section>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  // Initialize owl carousel
-  if (typeof window !== 'undefined' && window.$) {
-    window.$('.owl-carousel').owlCarousel({
-      items: 1,
-      loop: true,
-      margin: 0,
-      nav: false,
-      dots: false,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      smartSpeed: 800
-    })
-  }
-})
-</script>
-
 <style scoped>
-.page-content {
-  display: flex;
-  min-height: 100vh;
+.pringle-bay-page {
+  width: 100%;
 }
 
-.hero-media {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100vh;
+/* Hero Section */
+.hero-section {
+  width: 100%;
+  height: 80vh;
+  position: relative;
   overflow: hidden;
+}
+
+.hero-background {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .hero-image {
@@ -101,91 +118,151 @@ onMounted(() => {
   object-fit: cover;
 }
 
-.content-wrap {
-  margin-left: 50%;
-  width: 50%;
-  padding: 170px 50px;
-  background: #fff;
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-.intro-text {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #666;
-  margin-bottom: 2rem;
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
 }
 
-.feature {
-  margin-bottom: 2rem;
-  padding: 2rem;
-  background: rgba(169, 124, 80, 0.05);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-.feature:hover {
-  background: rgba(169, 124, 80, 0.1);
+.hero-content .subtitle {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Content Container */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 20px;
+}
+
+/* Features Section */
+.features-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.feature-section {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.feature-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-image {
+  flex: 1;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.feature-image:hover img {
+  transform: scale(1.05);
 }
 
 .feature-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #A97C50;
   margin-bottom: 1rem;
 }
 
-.feature h4 {
+.feature-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
   color: #333;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 
-.feature p {
-  color: #666;
+.feature-content p {
+  font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
-.feature-highlight {
-  background: rgba(169, 124, 80, 0.1);
-}
-
-.feature-content {
-  margin-top: 1rem;
-}
-
-.dining-options {
+.feature-content ul {
   list-style: none;
-  padding-left: 0;
-  margin-top: 1rem;
+  padding: 0;
 }
 
-.dining-options li {
-  margin-bottom: 0.75rem;
+.feature-content li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   position: relative;
 }
 
-.dining-options li::before {
+.feature-content li::before {
   content: "•";
   color: #A97C50;
   position: absolute;
   left: 0;
-  font-weight: bold;
-}
-
-.dining-options strong {
-  color: #333;
 }
 
 @media (max-width: 768px) {
-  .content-wrap {
-    margin-left: 0;
-    width: 100%;
-    padding: 120px 20px;
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
-  
-  .hero-media {
-    display: none;
+
+  .hero-content .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .feature-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .feature-section.reverse {
+    flex-direction: column;
+  }
+
+  .feature-image {
+    height: 400px;
+  }
+
+  .content-container {
+    padding: 2rem 20px;
+  }
+
+  .features-sections {
+    gap: 4rem;
   }
 }
 </style>

@@ -31,84 +31,112 @@
         </div>
       </div>
 
-      <!-- Image Gallery -->
-      <section class="gallery-section">
-        <ImageGallery :images="galleryImages" @openGallery="openGallery" />
-      </section>
+      <div class="features-sections">
+        <section class="feature-section">
+          <div class="feature-content">
+            <span class="mdi mdi-bed feature-icon"></span>
+            <h3>The Courtyard Bedrooms</h3>
+            <p>Unwind on the wraparound balcony, in a lush courtyard directly off your bedrooms with vibrant blooms.</p>
+            <ul>
+              <li>Double Bed opens up onto courtyard</li>
+              <li>Queen Bed opens onto court yard and living area</li>
+              <li>Shared bathroom</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Courtyard Bedroom">
+          </div>
+        </section>
 
-      <!-- Features Grid -->
-      <div class="features-grid">
-        <div class="feature-card">
-          <span class="mdi mdi-bed feature-icon"></span>
-          <h3>The Courtyard Bedrooms</h3>
-          <p>Unwind on the wraparound balcony, in a lush courtyard directly off your bedrooms with vibrant blooms.</p>
-          <ul>
-            <li>Double Bed opens up onto courtyard</li>
-            <li>Queen Bed opens onto court yard and living area</li>
-            <li>Shared bathroom</li>
-          </ul>
-        </div>
+        <section class="feature-section reverse">
+          <div class="feature-content">
+            <span class="mdi mdi-water feature-icon"></span>
+            <h3>The River View Bedroom</h3>
+            <p>Cozy ensuite bedroom with direct access to the bunk house - perfect for families.</p>
+            <ul>
+              <li>Queen size Bed</li>
+              <li>Ensuite Bathroom</li>
+              <li>Private access to bunk house</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="River View Bedroom">
+          </div>
+        </section>
 
-        <div class="feature-card">
-          <span class="mdi mdi-water feature-icon"></span>
-          <h3>The River View Bedroom</h3>
-          <p>Cozy ensuite bedroom with direct access to the bunk house - perfect for families.</p>
-          <ul>
-            <li>Queen size Bed</li>
-            <li>Ensuite Bathroom</li>
-            <li>Private access to bunk house</li>
-          </ul>
-        </div>
+        <section class="feature-section">
+          <div class="feature-content">
+            <span class="mdi mdi-stairs feature-icon"></span>
+            <h3>Upstairs Haven</h3>
+            <p>Two spacious bedrooms with a charming children's nook, perfect for the whole family.</p>
+            <ul>
+              <li>Two Queen Bedrooms</li>
+              <li>Children's Nook with Double Bunk bed</li>
+              <li>Cot available for infants</li>
+              <li>Shared full bathroom</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Upstairs Bedrooms">
+          </div>
+        </section>
 
-        <div class="feature-card">
-          <span class="mdi mdi-stairs feature-icon"></span>
-          <h3>Upstairs Haven</h3>
-          <p>Two spacious bedrooms with a charming children's nook, perfect for the whole family.</p>
-          <ul>
-            <li>Two Queen Bedrooms</li>
-            <li>Children's Nook with Double Bunk bed</li>
-            <li>Cot available for infants</li>
-            <li>Shared full bathroom</li>
-          </ul>
-        </div>
+        <section class="feature-section reverse">
+          <div class="feature-content">
+            <span class="mdi mdi-home feature-icon"></span>
+            <h3>The Bunk House</h3>
+            <p>A kids' paradise with games and entertainment.</p>
+            <ul>
+              <li>Two Bunk Beds (Sleeps 4)</li>
+              <li>Sleeper Couch</li>
+              <li>Smart TV</li>
+              <li>Multi-game Table Set</li>
+              <li>Beach Toy Collection</li>
+              <li>Outdoor bathroom with shower</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Bunk House">
+          </div>
+        </section>
 
-        <div class="feature-card highlight">
-          <span class="mdi mdi-home feature-icon"></span>
-          <h3>The Bunk House</h3>
-          <p>A kids' paradise with games and entertainment.</p>
-          <ul>
-            <li>Two Bunk Beds (Sleeps 4)</li>
-            <li>Sleeper Couch</li>
-            <li>Smart TV</li>
-            <li>Multi-game Table Set</li>
-            <li>Beach Toy Collection</li>
-            <li>Outdoor bathroom with shower</li>
-          </ul>
-        </div>
+        <section class="feature-section">
+          <div class="feature-content">
+            <span class="mdi mdi-silverware-fork-knife feature-icon"></span>
+            <h3>Chef's Kitchen</h3>
+            <p>A fully equipped kitchen ready for your culinary adventures.</p>
+            <ul>
+              <li>Gas stove and electric oven</li>
+              <li>Large fridge/freezer</li>
+              <li>Dishwasher</li>
+              <li>Coffee machine</li>
+              <li>Complete cookware and utensils</li>
+              <li>Outdoor braai facilities</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Kitchen">
+          </div>
+        </section>
 
-        <div class="feature-card">
-          <span class="mdi mdi-silverware-fork-knife feature-icon"></span>
-          <h3>Chef's Kitchen</h3>
-          <p>Fully equipped kitchen ready for family feasts.</p>
-          <ul>
-            <li>Gas SMEF stove with electric oven</li>
-            <li>Modern appliances including air fryer</li>
-            <li>Coffee machine & filtered water</li>
-            <li>Full laundry facilities</li>
-          </ul>
-        </div>
-
-        <div class="feature-card highlight">
-          <span class="mdi mdi-sofa feature-icon"></span>
-          <h3>Living & Dining</h3>
-          <p>The heart of the house where memories are made.</p>
-          <ul>
-            <li>Dining table for 10-14 guests</li>
-            <li>Cozy lounge with fireplace</li>
-            <li>Indoor-outdoor flow</li>
-            <li>Entertainment system</li>
-          </ul>
-        </div>
+        <section class="feature-section reverse">
+          <div class="feature-content">
+            <span class="mdi mdi-sofa feature-icon"></span>
+            <h3>Living Spaces</h3>
+            <p>Multiple areas for relaxation and entertainment.</p>
+            <ul>
+              <li>Spacious living room with Smart TV</li>
+              <li>Indoor fireplace</li>
+              <li>Dining area seating 12</li>
+              <li>Outdoor dining area</li>
+              <li>Multiple lounging spaces</li>
+              <li>Garden with play area</li>
+            </ul>
+          </div>
+          <div class="feature-image">
+            <img src="https://placehold.co/400x600" alt="Living Room">
+          </div>
+        </section>
       </div>
     </div>
   </div>
@@ -147,15 +175,14 @@ useHead({
 <style scoped>
 .house-page {
   width: 100%;
-  background: #fff;
 }
 
+/* Hero Section */
 .hero-section {
   width: 100%;
-  height: 70vh;
-  min-height: 600px;
+  height: 80vh;
   position: relative;
-  margin-bottom: 48px;
+  overflow: hidden;
 }
 
 .hero-background {
@@ -176,166 +203,172 @@ useHead({
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: white;
 }
 
 .hero-content {
   max-width: 800px;
-  padding: 0 24px;
-  color: #fff;
+  padding: 0 20px;
 }
 
 .hero-content h1 {
-  font-size: 48px;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
-  margin-bottom: 16px;
-  line-height: 1.2;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .hero-content .subtitle {
-  font-size: 20px;
+  font-size: 1.5rem;
   line-height: 1.6;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
+/* Content Container */
 .content-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 4rem 20px;
 }
 
+/* Quick Info Section */
 .quick-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  padding: 24px;
-  background: rgba(169, 124, 80, 0.05);
-  border-radius: 12px;
-  margin-bottom: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  color: #666;
 }
 
 .info-item .mdi {
+  font-size: 1.5rem;
   color: #A97C50;
-  font-size: 24px;
 }
 
-.info-item span {
-  color: #666;
-  font-size: 16px;
-  font-weight: 400;
+/* Features Section */
+.features-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
 }
 
-.gallery-section {
-  margin-bottom: 48px;
+.feature-section {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
-  margin-top: 48px;
+.feature-section.reverse {
+  flex-direction: row-reverse;
 }
 
-.feature-card {
-  background: #fff;
-  padding: 24px;
+.feature-content {
+  flex: 1;
+}
+
+.feature-image {
+  flex: 1;
+  height: 600px;
+  overflow: hidden;
   border-radius: 12px;
-  border: 1px solid rgba(169, 124, 80, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(169, 124, 80, 0.08);
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.feature-card.highlight {
-  background: rgba(169, 124, 80, 0.05);
-  border: none;
+.feature-image:hover img {
+  transform: scale(1.05);
 }
 
 .feature-icon {
-  font-size: 24px;
+  font-size: 2.5rem;
   color: #A97C50;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
-.feature-card h3 {
-  color: #A97C50;
-  margin-bottom: 8px;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 22px;
+.feature-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
-.feature-card p {
+.feature-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: #666;
-  margin-bottom: 16px;
-  line-height: 20px;
-  font-size: 14px;
+  margin-bottom: 1.5rem;
 }
 
-.feature-card ul {
+.feature-content ul {
   list-style: none;
   padding: 0;
 }
 
-.feature-card ul li {
+.feature-content li {
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: #666;
-  margin-bottom: 8px;
-  padding-left: 24px;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
   position: relative;
-  line-height: 20px;
-  font-size: 14px;
 }
 
-.feature-card ul li::before {
+.feature-content li::before {
   content: "•";
   color: #A97C50;
   position: absolute;
-  left: 8px;
+  left: 0;
 }
 
 @media (max-width: 768px) {
-  .hero-section {
-    height: 50vh;
-    min-height: 400px;
-  }
-
   .hero-content h1 {
-    font-size: 32px;
+    font-size: 2.5rem;
   }
 
   .hero-content .subtitle {
-    font-size: 18px;
+    font-size: 1.2rem;
+  }
+
+  .feature-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .feature-section.reverse {
+    flex-direction: column;
+  }
+
+  .feature-image {
+    height: 400px;
   }
 
   .content-container {
-    padding: 24px 16px;
+    padding: 2rem 20px;
+  }
+
+  .features-sections {
+    gap: 4rem;
   }
 
   .quick-info {
-    padding: 16px;
-    gap: 16px;
-  }
-
-  .features-grid {
-    gap: 24px;
-  }
-
-  .feature-card {
-    padding: 16px;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 }
 </style>

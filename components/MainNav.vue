@@ -37,6 +37,7 @@ const route = useRoute();
 
 .nav-menu {
   position: relative;
+  margin-top: 0;
 }
 
 /* Remove the pseudo-element that's causing the grey line */

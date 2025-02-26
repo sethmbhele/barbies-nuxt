@@ -35,3 +35,26 @@ const wrapperClasses = computed(() => {
   }
 })
 </script>
+
+<style>
+.app-wrapper {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-wrapper.home {
+  padding-top: 0;
+}
+
+.app-wrapper.has-booking {
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .app-wrapper {
+    padding-top: 80px;
+  }
+}
+</style>
